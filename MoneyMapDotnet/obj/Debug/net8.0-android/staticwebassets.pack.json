@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/obj/Debug/net8.0-android/scopedcss/bundle/MoneyMapDotnet.styles.css",
+      "PackagePath": "staticwebassets/MoneyMapDotnet.styles.css"
+    },
+    {
+      "Id": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/wwwroot/css/app.css",
+      "PackagePath": "staticwebassets/css/app.css"
+    },
+    {
+      "Id": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/wwwroot/css/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/wwwroot/css/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "obj/Debug/net8.0-android/staticwebassets/msbuild.MoneyMapDotnet.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0-android/staticwebassets/msbuild.build.MoneyMapDotnet.props",
+      "PackagePath": "build\\MoneyMapDotnet.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0-android/staticwebassets/msbuild.buildMultiTargeting.MoneyMapDotnet.props",
+      "PackagePath": "buildMultiTargeting\\MoneyMapDotnet.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0-android/staticwebassets/msbuild.buildTransitive.MoneyMapDotnet.props",
+      "PackagePath": "buildTransitive\\MoneyMapDotnet.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
