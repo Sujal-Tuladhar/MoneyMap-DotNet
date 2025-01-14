@@ -1,0 +1,47 @@
+.outer-box[b-eulepeshqm] {
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    margin: auto;
+    width: 1000px;
+    height: 800px;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.logo-section[b-eulepeshqm] {
+    position: absolute;
+    top: 20px; /* Adjusted position */
+    left: 20px; /* Adjusted position */
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    padding: 10px 15px;
+    background-color: #ffffff;
+}
+
+.inner-box[b-eulepeshqm] {
+    background-color: white;
+    width: 500px;
+    height: auto; /* Adjusted to fit content */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Align content inside the form */
+}
+
+/* Additional styles for form elements */
+.mb-3[b-eulepeshqm] {
+    margin-bottom: 1rem; /* Add spacing between form fields */
+}
+
+.mt-4[b-eulepeshqm] {
+    margin-top: 1.5rem; /* Add spacing above the submit button */
+}
+
+.mt-3[b-eulepeshqm] {
+    margin-top: 1rem; /* Add spacing above alerts */
+}

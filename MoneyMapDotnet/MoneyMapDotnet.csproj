@@ -65,8 +65,4 @@
         <PackageReference Include="MudBlazor" Version="8.0.0-rc.2" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Data\Models\Service\" />
-    </ItemGroup>
-
 </Project>

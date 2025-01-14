@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using MoneyMapDotnet.Service;
 using MudBlazor.Services;
 
 namespace MoneyMapDotnet;
@@ -16,6 +17,8 @@ public static class MauiProgram
         
 
         builder.Services.AddMudServices();
+        builder.Services.AddScoped<ClientService>();
+
 
 
 #if DEBUG

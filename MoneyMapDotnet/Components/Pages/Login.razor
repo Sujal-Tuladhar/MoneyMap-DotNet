@@ -1,0 +1,116 @@
+@page "/login"
+@layout LoginLayout
+@using MauiApp2.Components.Layout
+
+@using MoneyMapDotnet.Models
+@using MoneyMapDotnet.Service
+
+@inject ClientService ClientService
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+
+<div class="outer-box" style="background-color:#c0d38e; width: 1000px; height: 800px; border: 1px solid #e0e0e0; padding: 20px;">
+    <div class="logo-section" style="text-align: left; margin-bottom: 30px;">
+        <MudText Typo="Typo.h4" Style="display: inline-flex; align-items: center;">
+            MoneyMap
+        </MudText>
+    </div>
+    <div class="inner-box" style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <MudCard>
+            <MudCardContent>
+                <MudText Typo="Typo.h5" Align="Align.Center" GutterBottom="true">
+                    Login 
+                </MudText>
+                <EditForm Model="@loginModel" OnValidSubmit="HandleValidSubmit">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+
+                    <!-- Username -->
+                    <MudTextField @bind-Value="loginModel.Username"
+                                  Label="Username"
+                                  Required="true"
+                                  Variant="Variant.Filled"
+                                  FullWidth="true" Class="mb-3" />
+
+                    <!-- Password -->
+                    <MudTextField @bind-Value="loginModel.Password"
+                                  Label="Password"
+                                  InputType="InputType.Password"
+                                  Required="true"
+                                  Variant="Variant.Filled"
+                                  FullWidth="true" Class="mb-3" />
+
+                    <!-- Login Button -->
+                    <MudButton FullWidth="true"
+                               Variant="Variant.Filled"
+                               Color="Color.Primary"
+                               ButtonType="ButtonType.Submit"
+                               Style="background-color: #73931d"
+                               Class="mt-4">
+                        Login
+                    </MudButton>
+
+                    <!-- Error Message -->
+                    @if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        <MudAlert Severity="Severity.Error" Variant="Variant.Filled" Class="mt-3">
+                            @errorMessage
+                        </MudAlert>
+                    }
+                </EditForm>
+            </MudCardContent>
+        </MudCard>
+
+        <!-- Create Account Link -->
+        <div style=" margin-top: 10px; text-align: center;">
+            <span>Not Registered? </span>
+            <NavLink href="/" style="color: #73931d; text-decoration: none;">Register</NavLink>
+        </div>
+    </div>
+</div>
+@code {
+    private class LoginModel
+    {
+        public string Username { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+    }
+
+    private LoginModel loginModel = new LoginModel();
+    private string errorMessage = string.Empty;
+
+    private async Task HandleValidSubmit()
+    {
+        try
+        {
+            // Clear any previous error messages
+            errorMessage = string.Empty;
+
+            // Get user from database
+            var user = await UserService.GetUserAsync(loginModel.Username);
+
+            if (user == null)
+            {
+                errorMessage = "Invalid username or password";
+                return;
+            }
+
+            // Validate password
+            if (!UserService.ValidateUser(user, loginModel.Password))
+            {
+                errorMessage = "Invalid username or password";
+                return;
+            }
+
+            // Store user information in local storage or session
+            await JS.InvokeVoidAsync("localStorage.setItem", "currentUser", user.Username);
+            await JS.InvokeVoidAsync("localStorage.setItem", "userCurrency", user.Currency);
+
+            // Redirect to main page or dashboard
+            Navigation.NavigateTo("/dashboard");
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Login error: {ex.Message}";
+        }
+    }
+}

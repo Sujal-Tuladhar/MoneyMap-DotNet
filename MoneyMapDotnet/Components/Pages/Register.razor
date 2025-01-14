@@ -1,8 +1,128 @@
 @page "/Register"
+@using System.Runtime.InteropServices.JavaScript
 @using MoneyMapDotnet.Components.Layout
+@using MoneyMapDotnet.Models
+@using MoneyMapDotnet.Service
 @layout NoNavbar
-<h3>Register</h3>
+@inject NavigationManager Navigation
+@inject ClientService ClientService
+
+<style>
+    html, body {
+        overflow: hidden; 
+    }
+</style>
+
+<div class="outer-box">
+    <div class="logo-section">
+        <MudText Typo="Typo.h4" Style="display: inline-flex; align-items: center;">
+            MoneyMap
+        </MudText>
+    </div>
+    <div class="inner-box">
+        <MudCard>
+            <MudCardContent>
+                <MudText Typo="Typo.h4" Align="Align.Center">Register</MudText>
+                <EditForm Model="@newClient" OnValidSubmit="HandleSubmit">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                    <!-- Username -->
+                    <div class="mb-3">
+                        <MudTextField @bind-Value="newClient.Username" Label="Username" Required="true" Variant="Variant.Filled" FullWidth="true" />
+                    </div>
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <MudTextField @bind-Value="newClient.Password" 
+                                      Label="Password" 
+                                      Variant="Variant.Outlined" 
+                                      InputType="@PasswordInput" 
+                                      Adornment="Adornment.End" 
+                                      AdornmentIcon="@PasswordInputIcon" 
+                                      OnAdornmentClick="ButtonTestclick" 
+                                      AdornmentAriaLabel="Show Password" 
+                                      FullWidth="true" />
+                    </div>
+                    <!-- Currency Selection (Dropdown) -->
+                    <div class="mb-3">
+                        <MudSelect T="string" @bind-Value="newClient.Currency" Label="Currency" Required="true" Variant="Variant.Filled" FullWidth="true">
+                            <MudSelectItem Value="@("NPR")">NPR</MudSelectItem>
+                            <MudSelectItem Value="@("USD")">USD</MudSelectItem>
+                            <MudSelectItem Value="@("EUR")">EUR</MudSelectItem>
+                            <MudSelectItem Value="@("JPY")">JPY</MudSelectItem>
+                        </MudSelect>
+                    </div>
+                    <!-- Submit Button -->
+                    <MudButton FullWidth="true" Variant="Variant.Filled" Color="Color.Primary" ButtonType="ButtonType.Submit" Style="background-color: #73931d" Class="mt-4">
+                        Register
+                    </MudButton>
+                    <!-- Error Message -->
+                    @if (!string.IsNullOrEmpty(errorMsg))
+                    {
+                        <MudAlert Severity="Severity.Error" Variant="Variant.Filled" Class="mt-3">
+                            @errorMsg
+                        </MudAlert>
+                    }
+                    <!-- Success Message -->
+                    @if (registrationSucess)
+                    {
+                        <MudAlert Severity="Severity.Success" Variant="Variant.Filled" Class="mt-3">
+                            Registration Successful! Redirecting to login page...
+                        </MudAlert>
+                    }
+                </EditForm>
+            </MudCardContent>
+        </MudCard>
+        <div style="margin-top: 10px; text-align: center;">
+            <span>Already Registered? </span>
+            <NavLink href="/login" style="color: #73931d; text-decoration: none;">Go to Login</NavLink>
+        </div>
+    </div>
+</div>
 
 @code {
-    
+    private Client newClient = new Client(string.Empty, string.Empty, string.Empty);
+    private string errorMsg;
+    private bool registrationSucess;
+    private bool isShow;
+    private InputType PasswordInput = InputType.Password;
+    private string PasswordInputIcon = Icons.Material.Filled.VisibilityOff;
+
+    private void ButtonTestclick()
+    {
+        if (isShow)
+        {
+            isShow = false;
+            PasswordInputIcon = Icons.Material.Filled.VisibilityOff;
+            PasswordInput = InputType.Password;
+        }
+        else
+        {
+            isShow = true;
+            PasswordInputIcon = Icons.Material.Filled.Visibility;
+            PasswordInput = InputType.Text;
+        }
+    }
+
+    private async Task HandleSubmit()
+    {
+        try
+        {
+            // Check if the username already exists
+            var existingUser = await ClientService.GetUserAsync(newClient.Username);
+            if (existingUser != null)
+            {
+                errorMsg = "Username already exists!";
+                return;
+            }
+            await ClientService.RegisterClient(newClient);
+            registrationSucess = true;
+            await Task.Delay(3000);
+            Navigation.NavigateTo("/login");
+            
+        }
+        catch (Exception ex)
+        {
+            errorMsg = $"Error: {ex.Message}";
+        }
+    }
 }
