@@ -81,6 +81,13 @@ build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTmF2TWVudS5y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-phlqojppbi
 
+[/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/Components/Pages/Dashbaord.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9EYXNoYmFvcmQucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-o2gjg2r1pd
+
 [/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/Components/Pages/Login.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 

@@ -42,11 +42,11 @@
 		</data>
 		<key>Resources/wwwroot/MoneyMapDotnet.bundle.scp.css</key>
 		<data>
-		TdeDrAzBtc8lraicdBXOyge6qlI=
+		jR6pATMXCiA88SqK/DyirO821vg=
 		</data>
 		<key>Resources/wwwroot/MoneyMapDotnet.styles.css</key>
 		<data>
-		TdeDrAzBtc8lraicdBXOyge6qlI=
+		jR6pATMXCiA88SqK/DyirO821vg=
 		</data>
 		<key>Resources/wwwroot/_content/MudBlazor/MudBlazor.min.css</key>
 		<data>
@@ -71,6 +71,34 @@
 		<key>Resources/wwwroot/favicon.png</key>
 		<data>
 		7r/hu8/biR6gUQ5JDFPoGl7PC1I=
+		</data>
+		<key>Resources/wwwroot/icons/Add.svg</key>
+		<data>
+		R3Czgh1d7DUuw+D6zwfVaNhnTBk=
+		</data>
+		<key>Resources/wwwroot/icons/Dashboard.svg</key>
+		<data>
+		7Lv4Kvra1NdCzwfDeOowCkkYJWU=
+		</data>
+		<key>Resources/wwwroot/icons/Debt.svg</key>
+		<data>
+		Rkjt16ojN1OSbvqU0/+ViJENWeo=
+		</data>
+		<key>Resources/wwwroot/icons/Export.svg</key>
+		<data>
+		nLivA6P+U2PQgIFH5ZecXtAg9Rg=
+		</data>
+		<key>Resources/wwwroot/icons/IE.svg</key>
+		<data>
+		kxcGdQqz+Yrnb5cFtcS9nPI0kkM=
+		</data>
+		<key>Resources/wwwroot/icons/Import.svg</key>
+		<data>
+		/UiySFWlw+cbpiTOtFDijyvAclc=
+		</data>
+		<key>Resources/wwwroot/icons/Transaction.svg</key>
+		<data>
+		RJjlJG8QzGdiCkjAxwWw+Ei1goo=
 		</data>
 		<key>Resources/wwwroot/index.html</key>
 		<data>
@@ -363,14 +391,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nDE0NHo78nNqzUeSLRhmnpX7gTl8Hm4sa32jc6sP3os=
+			HAp5jfBojy4jzX5EtpYWe1d55UU/kpz6glqeSRE9yHY=
 			</data>
 		</dict>
 		<key>MonoBundle/MoneyMapDotnet.pdb</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+wyGsdoUAYj8VMUrATAxv5w0hRrUH/tRf5Sv+TqhZck=
+			3MxQrl3E4GuI/EBJuGHm5iR/yeLkk0VaOsrj1DtjX9g=
 			</data>
 		</dict>
 		<key>MonoBundle/MudBlazor.dll</key>
@@ -1861,14 +1889,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LZ0GPbnA8k0GCsOuZP+Z3wRsa8HuQuOHu1TdOw0TKjE=
+			RinpgkikB07OIMsMzSVq9vJbaDfTROAFJTnh4mJMv50=
 			</data>
 		</dict>
 		<key>Resources/wwwroot/MoneyMapDotnet.styles.css</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LZ0GPbnA8k0GCsOuZP+Z3wRsa8HuQuOHu1TdOw0TKjE=
+			RinpgkikB07OIMsMzSVq9vJbaDfTROAFJTnh4mJMv50=
 			</data>
 		</dict>
 		<key>Resources/wwwroot/_content/MudBlazor/MudBlazor.min.css</key>
@@ -1911,6 +1939,55 @@
 			<key>hash2</key>
 			<data>
 			4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg=
+			</data>
+		</dict>
+		<key>Resources/wwwroot/icons/Add.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			2cZKeldo4ZxIOC/O39bXxpF+flRlx8T+uJa40JmWzVo=
+			</data>
+		</dict>
+		<key>Resources/wwwroot/icons/Dashboard.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dsmOqFNa9TVD6kg69Kd7QR1frNKUHK2GnJZ5hmTs3dQ=
+			</data>
+		</dict>
+		<key>Resources/wwwroot/icons/Debt.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			NcFTG5YdfnF1nkvONmzOO3Hf73woCK6il4um4cEccEI=
+			</data>
+		</dict>
+		<key>Resources/wwwroot/icons/Export.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9cv4NVnCnRY3DAlVcnaG2tU083KqnQDrKCcP9hnIdDI=
+			</data>
+		</dict>
+		<key>Resources/wwwroot/icons/IE.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			RudqDGHsgC4KPIQGYqqmhKaPNdjNSMLntqSlR6Z05Xs=
+			</data>
+		</dict>
+		<key>Resources/wwwroot/icons/Import.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			0lsY9PwekxJzlxZzvxTRmQnhMc9zL0/OXYDffVzbZQw=
+			</data>
+		</dict>
+		<key>Resources/wwwroot/icons/Transaction.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			jfHn27hwQhjdFAkv4kc0AdXsE+YlQYW8LM89h3V5qkg=
 			</data>
 		</dict>
 		<key>Resources/wwwroot/index.html</key>

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MoneyMapDotnet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+6ba51e1438be8dadc1b04e9b695ff070811862e8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+bee7c3a12499622142f930b1d2ffa365a5a5b382")]
 [assembly: System.Reflection.AssemblyProductAttribute("MoneyMapDotnet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MoneyMapDotnet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

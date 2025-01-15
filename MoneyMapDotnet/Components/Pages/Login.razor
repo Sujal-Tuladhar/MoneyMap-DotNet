@@ -1,10 +1,9 @@
 @page "/login"
-@layout LoginLayout
-@using MauiApp2.Components.Layout
 
+@using MoneyMapDotnet.Components.Layout
+@layout NoNavbar
 @using MoneyMapDotnet.Models
 @using MoneyMapDotnet.Service
-
 @inject ClientService ClientService
 @inject NavigationManager Navigation
 @inject IJSRuntime JS
@@ -19,7 +18,7 @@
         <MudCard>
             <MudCardContent>
                 <MudText Typo="Typo.h5" Align="Align.Center" GutterBottom="true">
-                    Login 
+                    Login
                 </MudText>
                 <EditForm Model="@loginModel" OnValidSubmit="HandleValidSubmit">
                     <DataAnnotationsValidator />
@@ -33,12 +32,16 @@
                                   FullWidth="true" Class="mb-3" />
 
                     <!-- Password -->
+
                     <MudTextField @bind-Value="loginModel.Password"
                                   Label="Password"
-                                  InputType="InputType.Password"
-                                  Required="true"
-                                  Variant="Variant.Filled"
-                                  FullWidth="true" Class="mb-3" />
+                                  Variant="Variant.Outlined"
+                                  InputType="@PasswordInput"
+                                  Adornment="Adornment.End"
+                                  AdornmentIcon="@PasswordInputIcon"
+                                  OnAdornmentClick="ButtonTestclick"
+                                  AdornmentAriaLabel="Show Password"
+                                  FullWidth="true" />
 
                     <!-- Login Button -->
                     <MudButton FullWidth="true"
@@ -64,11 +67,30 @@
         <!-- Create Account Link -->
         <div style=" margin-top: 10px; text-align: center;">
             <span>Not Registered? </span>
-            <NavLink href="/" style="color: #73931d; text-decoration: none;">Register</NavLink>
+            <NavLink href="/Register" style="color: #73931d; text-decoration: none;">Register</NavLink>
         </div>
     </div>
 </div>
 @code {
+    private bool isShow;
+    private InputType PasswordInput = InputType.Password;
+    private string PasswordInputIcon = Icons.Material.Filled.VisibilityOff;
+
+    private void ButtonTestclick()
+    {
+        if (isShow)
+        {
+            isShow = false;
+            PasswordInputIcon = Icons.Material.Filled.VisibilityOff;
+            PasswordInput = InputType.Password;
+        }
+        else
+        {
+            isShow = true;
+            PasswordInputIcon = Icons.Material.Filled.Visibility;
+            PasswordInput = InputType.Text;
+        }
+    }
     private class LoginModel
     {
         public string Username { get; set; } = string.Empty;
@@ -86,7 +108,7 @@
             errorMessage = string.Empty;
 
             // Get user from database
-            var user = await UserService.GetUserAsync(loginModel.Username);
+            var user = await ClientService.GetUserAsync(loginModel.Username);
 
             if (user == null)
             {
@@ -95,7 +117,7 @@
             }
 
             // Validate password
-            if (!UserService.ValidateUser(user, loginModel.Password))
+            if (!ClientService.ValidateClient (user, loginModel.Password))
             {
                 errorMessage = "Invalid username or password";
                 return;

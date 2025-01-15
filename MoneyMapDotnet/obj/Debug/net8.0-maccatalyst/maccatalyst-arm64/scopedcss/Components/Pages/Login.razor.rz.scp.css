@@ -1,0 +1,40 @@
+.outer-box[b-kb7uaocxqg] {
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    margin: auto;
+    width: 1000px;
+    height: 800px;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.logo-section[b-kb7uaocxqg] {
+    position: absolute;
+    top: 150px;
+    left: 90px;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    padding: 10px 15px;
+    background-color: #ffffff;
+}
+
+.inner-box[b-kb7uaocxqg] {
+    background-color: white;
+    width: 500px;
+    height: 390px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 80px; /* Create space between the inner box and the logo */
+    text-align: center; /* Align content inside the form */
+}
+
+.MudNavLink[b-kb7uaocxqg]{
+    height: 10px;
+    margin-bottom: 1px;
+    font-size: 14px !important;
+}

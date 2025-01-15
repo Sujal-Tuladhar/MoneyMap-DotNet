@@ -1,18 +1,96 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">MoneyMapDotnet</a>
-    </div>
-</div>
+﻿@using MudBlazor
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
 
-<input type="checkbox" title="Navigation menu" class="navbar-toggler"/>
+<!-- Sidebar Drawer -->
+<MudDrawer Style="background-color: #73931d; " Class="text-black"  Open="true" Elevation="1"  Width="260px" ClipMode="DrawerClipMode.Always">
+    <MudNavMenu >
+        <!-- Title at the top -->
+        <MudText Typo="Typo.h5" Class="px-4 py-2">
+            MoneyMap
+        </MudText>
+        <MudDivider Class="mb-5 mt-3" />
 
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
+        <!-- Navigation Links -->
+        <MudNavLink Href="/dashboard"     Icon="@dashbaordIcon">
+            Dashboard
+        </MudNavLink>
+        <MudNavLink Href="/transactions" Icon="@addIcon">
+            Add Transactions
+        </MudNavLink>
+
+        <MudNavLink Href="/Alltransactions" Icon="@tranIcon">
+            Transactions
+        </MudNavLink>
+        <MudNavLink Href="/debt" Icon="@debtIcon">
+            Debt
+        </MudNavLink>
+        <MudNavLink Href="/import" Icon="@ieIcon">
+            Import / Export
+        </MudNavLink>
+
+
+        <!-- Spacer to push logout and user info to the bottom -->
+        <MudSpacer />
+        <MudDivider Class="mt-2 " />
+        <MudText Typo="Typo.body1" Class="text-black px-4 mt-2 mb-4 mud-text-secondary">
+            <p style="font-size: 18px;">
+                Details:
+            </p>
+
+            <p style="display: flex">
+
+                Name: @userName
+            </p>
+        </MudText>
+        <!--  Logout -->
+        <MudDivider Class="mt-2 mb-3 " />
+        <div style="padding-left: 30px">
+            <MudButton FullWidth="false"
+                       Style="border: none; 
+                          width: 120px; 
+                          border-radius: 25px; 
+                          background-color: #ff4444; 
+                          color: white; 
+                          padding: 8px 16px; 
+                          font-size: 14px; 
+                          font-weight: 500; 
+                          transition: all 0.3s ease;"
+                       Color="Color.Error"
+                       OnClick="HandleLogout"
+                       StartIcon="@Icons.Material.Filled.Logout"
+                       Class="mt-2 mb-3  mx-auto"
+                       onmouseover="this.style.backgroundColor='#cc0000';"
+                       onmouseout="this.style.backgroundColor='#ff4444';">
+                Logout
+            </MudButton>
         </div>
-       
-    </nav>
-</div>
+    </MudNavMenu>
+</MudDrawer>
+
+@code {
+private string dashbaordIcon = "<image width='24' height='24' xlink:href='icons/dashboard.svg' />";
+private string addIcon = "<image width='24' height='24' xlink:href='icons/Add.svg' />";
+private string tranIcon = "<image width='24' height='24' xlink:href='icons/Transaction.svg' />";
+private string debtIcon = "<image width='24' height='24' xlink:href='icons/Debt.svg' />";
+private string ieIcon = "<image width='24' height='24' xlink:href='icons/IE.svg' />";
+private string importIcon = "<image width='24' height='24' xlink:href='icons/Import.svg' />";
+private string exportIcon = "<image width='24' height='24' xlink:href='icons/Export.svg' />";
+
+private string userName = "Loading...";
+
+protected override async Task OnInitializedAsync()
+{
+// Fetch user name from local storage
+userName = await JS.InvokeAsync<string>("localStorage.getItem", "currentUser") ?? "Guest";
+}
+
+private async Task HandleLogout()
+{
+// Clear local storage
+await JS.InvokeVoidAsync("localStorage.clear");
+
+// Redirect to login page
+Navigation.NavigateTo("/login", forceLoad: true);
+}
+}

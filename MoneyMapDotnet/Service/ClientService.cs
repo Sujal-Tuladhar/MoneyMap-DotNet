@@ -48,5 +48,14 @@ namespace MoneyMapDotnet.Service
                 return null;
             }
         }
+        public bool ValidateClient(Client client, string inputPassword)
+        {
+            if (client == null || string.IsNullOrEmpty(inputPassword))
+            {
+                return false;
+            }
+        
+            return client.ValidatePassword(inputPassword);
+        }
     }
 }

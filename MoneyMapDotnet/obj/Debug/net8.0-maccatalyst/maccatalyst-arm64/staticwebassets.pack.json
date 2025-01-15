@@ -21,6 +21,34 @@
       "PackagePath": "staticwebassets/favicon.png"
     },
     {
+      "Id": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/wwwroot/icons/Add.svg",
+      "PackagePath": "staticwebassets/icons/Add.svg"
+    },
+    {
+      "Id": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/wwwroot/icons/Dashboard.svg",
+      "PackagePath": "staticwebassets/icons/Dashboard.svg"
+    },
+    {
+      "Id": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/wwwroot/icons/Debt.svg",
+      "PackagePath": "staticwebassets/icons/Debt.svg"
+    },
+    {
+      "Id": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/wwwroot/icons/Export.svg",
+      "PackagePath": "staticwebassets/icons/Export.svg"
+    },
+    {
+      "Id": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/wwwroot/icons/IE.svg",
+      "PackagePath": "staticwebassets/icons/IE.svg"
+    },
+    {
+      "Id": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/wwwroot/icons/Import.svg",
+      "PackagePath": "staticwebassets/icons/Import.svg"
+    },
+    {
+      "Id": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/wwwroot/icons/Transaction.svg",
+      "PackagePath": "staticwebassets/icons/Transaction.svg"
+    },
+    {
       "Id": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/wwwroot/index.html",
       "PackagePath": "staticwebassets/index.html"
     },

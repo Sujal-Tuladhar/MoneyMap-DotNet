@@ -334,3 +334,4 @@
 /Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/MoneyMapDotnet.sourcelink.json
 /Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/scopedcss/Components/Pages/Register.razor.rz.scp.css
 /Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/scopedcss/Components/Pages/Login.razor.rz.scp.css
+/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/scopedcss/Components/Pages/Dashbaord.razor.rz.scp.css

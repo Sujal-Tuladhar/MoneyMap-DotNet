@@ -10,6 +10,12 @@ public class Client
 
     public Client(string username, string password, string currency)
     {
-        
+        Username=username;
+        Password=password;
+        Currency=currency;
+    }
+    public bool ValidatePassword(string inputPassword)
+    {
+        return Password.Equals(inputPassword);
     }
 }
