@@ -18,6 +18,7 @@ public static class MauiProgram
 
         builder.Services.AddMudServices();
         builder.Services.AddScoped<ClientService>();
+        builder.Services.AddScoped<TransactionService>();
 
 
 

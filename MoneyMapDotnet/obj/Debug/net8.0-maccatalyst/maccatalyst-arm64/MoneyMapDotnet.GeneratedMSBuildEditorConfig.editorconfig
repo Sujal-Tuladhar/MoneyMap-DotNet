@@ -81,12 +81,40 @@ build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTmF2TWVudS5y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-phlqojppbi
 
+[/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/Components/Pages/AddTransaction.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9BZGRUcmFuc2FjdGlvbi5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-vma3e70tzi
+
+[/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/Components/Pages/AllTransaction.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9BbGxUcmFuc2FjdGlvbi5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-zctf87v46d
+
 [/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/Components/Pages/Dashbaord.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9EYXNoYmFvcmQucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-o2gjg2r1pd
+
+[/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/Components/Pages/Debt.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9EZWJ0LnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-law0wuxm33
+
+[/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/Components/Pages/ImpExp.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9JbXBFeHAucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-jwq29no422
 
 [/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/Components/Pages/Login.razor]
 build_metadata.AdditionalFiles.GenKind = 

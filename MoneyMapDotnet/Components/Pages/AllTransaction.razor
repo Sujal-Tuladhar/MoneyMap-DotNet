@@ -1,0 +1,107 @@
+@page "/allTransaction"
+@using MoneyMapDotnet.Models
+@inject MoneyMapDotnet.Service.TransactionService TransactionService
+@inject IJSRuntime JS
+
+<h3 style="text-align: center; color: black; font-size: 2rem; font-weight: 400; margin-bottom: 30px; text-transform: uppercase; text-decoration: underline; letter-spacing: 1px;">Transactions</h3>
+
+<div style="display: flex; justify-content: center; margin-bottom: 20px;">
+    <MudDatePicker Label="Start Date" @bind-Value="startDate" />
+    <MudDatePicker Label="End Date" @bind-Value="endDate" />
+    <MudButton OnClick="FilterTransactions" Variant="Variant.Outlined" Style="margin-left: 10px;">
+        Filter
+    </MudButton>
+</div>
+
+<div style="display: flex; justify-content: center;">
+    <MudTable Items="Transactions" Hover="true" Class="mt-4" Style="border-collapse: separate; border-spacing: 0; width: 100%;">
+        <HeaderContent>
+            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px;">Description</MudTh>
+            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px;">Budget</MudTh>
+            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px;">Type</MudTh>
+            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px;">Remarks</MudTh>
+            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px;">Date</MudTh>
+            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px;">Tags</MudTh>
+            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px;">Action</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Description">@context.Description</MudTd>
+            <MudTd DataLabel="Amount">@context.Budget.ToString("C")</MudTd>
+            <MudTd DataLabel="Type">@context.Type</MudTd>
+            <MudTd DataLabel="Remarks">@context.Remarks</MudTd>
+            <MudTd DataLabel="Date">@context.Date?.ToString("MM/dd/yyyy")</MudTd>
+            <MudTd DataLabel="Tags">@string.Join(", ", @context.Tags)</MudTd>
+            <MudTd DataLabel="Action">
+                <MudButton OnClick="@(() => ConfirmDeleteTransaction(context))" Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.Delete" Style="background-color: #ff0000; color: white; border-color: #ff0000;">
+                    Delete
+                </MudButton>
+            </MudTd>
+        </RowTemplate>
+        <PagerContent>
+            <MudTablePager Style="background-color: #f9f9f9; border-radius: 0 0 8px 8px; padding: 12px;" />
+        </PagerContent>
+    </MudTable>
+</div>
+
+@code {
+    private List<Transaction> Transactions = new List<Transaction>();
+    private DateTime? startDate;
+    private DateTime? endDate;
+    private string currentUser;
+
+    protected override async Task OnInitializedAsync()
+    {
+        currentUser = await JS.InvokeAsync<string>("localStorage.getItem", "currentUser");
+        if (!string.IsNullOrEmpty(currentUser))
+        {
+            await LoadTransactions();
+        }
+    }
+
+    private async Task LoadTransactions()
+    {
+        if (!string.IsNullOrEmpty(currentUser))
+        {
+            Transactions = await TransactionService.GetTransactionDetail(currentUser);
+        }
+    }
+
+    private async Task FilterTransactions()
+    {
+        if (startDate.HasValue && endDate.HasValue && !string.IsNullOrEmpty(currentUser))
+        {
+            Console.WriteLine($"Filtering from {startDate.Value.Date} to {endDate.Value.Date}");
+            Transactions = await TransactionService.GetTransactionsByDateRange(currentUser, startDate.Value, endDate.Value);
+
+            if (Transactions.Count == 0)
+            {
+                Console.WriteLine("No transactions found for the given date range.");
+            }
+            else
+            {
+                Console.WriteLine($"Found {Transactions.Count} transactions.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid date range or user not found.");
+            Transactions = new List<Transaction>();
+        }
+    }
+
+
+    private async Task ConfirmDeleteTransaction(Transaction transaction)
+    {
+        bool confirm = await JS.InvokeAsync<bool>("confirm", $"Are you sure you want to delete the transaction: {transaction.Description}?");
+        if (confirm)
+        {
+            await DeleteTransaction(transaction);
+        }
+    }
+
+    private async Task DeleteTransaction(Transaction transaction)
+    {
+        await TransactionService.DeleteTransactionData(transaction.Description, transaction.Date, currentUser);
+        await LoadTransactions(); // Refresh the transaction list after deletion
+    }
+}

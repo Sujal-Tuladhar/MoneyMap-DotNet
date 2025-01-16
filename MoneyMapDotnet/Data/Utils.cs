@@ -25,6 +25,7 @@ namespace MoneyMapDotnet.Data
         // Get the path for storing client.json
         public static string GetClientsPath() => Path.Combine(GetDirectory(), "client.json");
         
+        public static string GetTransactionPath() => Path.Combine(GetDirectory(), "transaction.json");
         public static async Task SaveJson<T>(T data, string path)
         {
             try

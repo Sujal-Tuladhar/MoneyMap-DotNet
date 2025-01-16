@@ -1,0 +1,168 @@
+@page "/addTransaction"
+@using MoneyMapDotnet.Models
+@inject MoneyMapDotnet.Service.TransactionService TransactionService
+@inject IJSRuntime JS
+
+<h3 style="text-align: center; color: black; font-size: 2rem; font-weight: 600; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px;">Add New Transaction</h3>
+
+<div style="display: flex; justify-content: center;">
+    <div class="form-container" style="width: 800px; padding: 32px; background-color: #f5faf6; border-radius: 16px; box-shadow: 0 8px 24px rgba(46, 125, 50, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+        <MudForm Model="newTransaction" @ref="form" Style="display: flex; flex-direction: column; gap: 24px;">
+            <MudDataAnnotationsValidator />
+
+            <!-- Title Field -->
+            <MudTextField @bind-Value="newTransaction.Description" Label="Title" Required ErrorText="Title is required" Variant="Variant.Outlined" Margin="Margin.Dense" Immediate="true" Style="background-color: #ffffff; color: #2e7d32; border-color: #c8e6c9;" LabelStyle="color: #2e7d32;" InputStyle="color: #2e7d32;" />
+
+            <!-- Amount Field with Currency Symbol -->
+            <MudNumericField @bind-Value="newTransaction.Budget" Label="Amount" Required ErrorText="Amount is required" Variant="Variant.Outlined" Margin="Margin.Dense" Adornment="Adornment.Start" AdornmentIcon="$" Min="0" Style="background-color: #ffffff; color: #2e7d32; border-color: #c8e6c9;" LabelStyle="color: #2e7d32;" InputStyle="color: #2e7d32;" />
+
+            <!-- Type Selection with Icons -->
+            <MudSelect T="string" @bind-Value="newTransaction.Type" Label="Transaction Type" Required ErrorText="Type is required" Variant="Variant.Outlined" Margin="Margin.Dense" Style="background-color: #ffffff; color: #2e7d32; border-color: #c8e6c9;" LabelStyle="color: #2e7d32;">
+                <MudSelectItem Value="@("Credit")">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <MudIcon Icon="@Icons.Material.Filled.ArrowUpward" Color="Color.Success" />
+                        <span style="color: #2e7d32;">Credit</span>
+                    </div>
+                </MudSelectItem>
+                <MudSelectItem Value="@("Debit")">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <MudIcon Icon="@Icons.Material.Filled.ArrowDownward" Color="Color.Error" />
+                        <span style="color: #2e7d32;">Debit</span>
+                    </div>
+                </MudSelectItem>
+            </MudSelect>
+
+            <!-- Notes Field -->
+            <MudTextField @bind-Value="newTransaction.Remarks" Label="Notes (Optional)" Variant="Variant.Outlined" Lines="3" Margin="Margin.Dense" MaxLength="500" Style="background-color: #ffffff; color: #2e7d32; border-color: #c8e6c9;" LabelStyle="color: #2e7d32;" InputStyle="color: #2e7d32;" />
+
+            <!-- Date Field -->
+            <MudDatePicker
+                @bind-Value="newTransaction.Date"
+                Label="Transaction Date"
+                Variant="Variant.Outlined"
+                Margin="Margin.Dense"
+                Min="new DateTime(2023, 1, 1)"
+                Max="@DateTime.Now"
+                Required
+                ErrorText="Please select a date."
+                Style="background-color: #ffffff; color: #2e7d32; border-color: #c8e6c9;"
+                LabelStyle="color: #2e7d32;"
+            />
+
+        </MudForm>
+
+        <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 24px;">
+            <MudSelect T="string" Value="Tag" ValueChanged="@((string val) => TagState(val))" Label="Tags" Variant="Variant.Outlined" Margin="Margin.Dense" Style="background-color: #ffffff; color: #2e7d32; border-color: #c8e6c9;" LabelStyle="color: #2e7d32;">
+                <MudSelectItem Value="@("Yearly")">Yearly</MudSelectItem>
+                <MudSelectItem Value="@("Monthly")">Monthly</MudSelectItem>
+                <MudSelectItem Value="@("Food")">Food</MudSelectItem>
+                <MudSelectItem Value="@("Drinks")">Drinks</MudSelectItem>
+                <MudSelectItem Value="@("Clothes")">Clothes</MudSelectItem>
+                <MudSelectItem Value="@("Gadgets")">Gadgets</MudSelectItem>
+                <MudSelectItem Value="@("Miscellaneous")">Miscellaneous</MudSelectItem>
+                <MudSelectItem Value="@("Fuel")">Fuel</MudSelectItem>
+                <MudSelectItem Value="@("Rent")">Rent</MudSelectItem>
+                <MudSelectItem Value="@("EMI")">EMI</MudSelectItem>
+                <MudSelectItem Value="@("Party")">Party</MudSelectItem>
+            </MudSelect>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+                <MudButton Variant="Variant.Outlined" Color="Color.Success" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small" Style="background-color: #e8f5e9; color: #2e7d32; border-color: #c8e6c9;">Add Custom Tag</MudButton>
+                <MudButton Variant="Variant.Filled" Color="Color.Success" StartIcon="@Icons.Material.Filled.Check" Size="Size.Small" Style="background-color: #2e7d32; color: #ffffff;" OnClick="AddNewTransaction">Add Transaction</MudButton>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3 style="text-align: center; color: black; font-size: 2rem; font-weight: 600; margin-top: 30px; text-transform: uppercase; letter-spacing: 1px;">Transaction List</h3>
+
+<div style="display: flex; justify-content: center; margin-top: 20px;">
+    <MudTable Items="Transactions" Hover="true" Class="mt-4" Style="border-collapse: separate; border-spacing: 0; width: 100%;">
+        <HeaderContent>
+            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px; ">Description</MudTh>
+            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px; ">Budget</MudTh>
+            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px; ">Type</MudTh>
+            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px; ">Remarks</MudTh>
+            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px; ">Date</MudTh>
+            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px;">Tags</MudTh>
+            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px;">Action</MudTh> 
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Description">@context.Description</MudTd>
+            <MudTd DataLabel="Amount">@context.Budget.ToString("C")</MudTd>
+            <MudTd DataLabel="Type">@context.Type</MudTd>
+            <MudTd DataLabel="Remarks">@context.Remarks</MudTd>
+            <MudTd DataLabel="Date">@context.Date?.ToString("MM/dd/yyyy")</MudTd>
+            <MudTd DataLabel="Tags">@string.Join(", ", @context.Tags)</MudTd>
+            <MudTd DataLabel="Action">
+                <!-- Add Edit Button -->
+                <MudButton Variant="Variant.Outlined" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Edit">
+                    Edit
+                </MudButton>
+            </MudTd>
+            
+        </RowTemplate>
+        <PagerContent>
+            <MudTablePager Style="background-color: #f9f9f9; border-radius: 0 0 8px 8px; padding: 12px;" />
+        </PagerContent>
+    </MudTable>
+</div>
+
+@code {
+    private MudForm form;
+    private List<Transaction> Transactions = new List<Transaction>();
+    private Transaction newTransaction = new Transaction("", 0.0m, "", new List<string>(), null, "", "");
+    private string Tag;
+    private string currentUser;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Retrieve currentUser (username)
+        currentUser = await JS.InvokeAsync<string>("localStorage.getItem", "currentUser");
+        if (!string.IsNullOrEmpty(currentUser))
+        {
+            await LoadTransactions();
+        }
+    }
+
+    private void TagState(string value)
+    {
+        Tag = value;
+        StateHasChanged();
+    }
+
+    private async Task LoadTransactions()
+    {
+        if (!string.IsNullOrEmpty(currentUser))
+        {
+            var trans = await TransactionService.GetTransactionDetail(currentUser);
+            // Order by Date descending so the newest is on top
+            Transactions = trans.OrderByDescending(t => t.Date).ToList();
+        }
+    }
+
+
+    private async Task AddNewTransaction()
+    {
+        if (form.IsValid)
+        {
+            newTransaction.Tags.Add(Tag);
+
+            // Ensure that newTransaction.Date is not overwritten with DateTime.Now
+            if (!newTransaction.Date.HasValue)
+            {
+                newTransaction.Date = DateTime.Now;
+            }
+
+            await TransactionService.AddTransactionData(newTransaction, currentUser);
+            await LoadTransactions();  // Update the transaction list after adding
+
+            // Reset newTransaction but retain the date as null
+            newTransaction = new Transaction("", 0.0m, "", new List<string>(), null, "", "");
+        }
+    }
+
+
+}
+
+
