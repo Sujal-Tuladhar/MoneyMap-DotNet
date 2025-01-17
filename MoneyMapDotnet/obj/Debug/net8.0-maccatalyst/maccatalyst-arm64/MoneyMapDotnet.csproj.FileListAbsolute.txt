@@ -286,6 +286,7 @@
 /Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/scopedcss/Components/Pages/AddTransaction.razor.rz.scp.css
 /Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/scopedcss/Components/Pages/AllTransaction.razor.rz.scp.css
 /Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/scopedcss/Components/Pages/Dashbaord.razor.rz.scp.css
+/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/scopedcss/Components/Pages/Debts.razor.rz.scp.css
 /Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/scopedcss/Components/Pages/Login.razor.rz.scp.css
 /Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/scopedcss/Components/Pages/Register.razor.rz.scp.css
 /Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/scopedcss/bundle/MoneyMapDotnet.styles.css
@@ -337,4 +338,3 @@
 /Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/MoneyMapDotnet.pdb
 /Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/MoneyMapDotnet.genruntimeconfig.cache
 /Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/ref/MoneyMapDotnet.dll
-/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/scopedcss/Components/Pages/Debts.razor.rz.scp.css

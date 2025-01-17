@@ -6,7 +6,7 @@ using MoneyMapDotnet.Models;
 
 namespace MoneyMapDotnet.Service
 {
-    internal class Export
+    public class Export
     {
         private readonly TransactionService _transactionService;
 
@@ -15,12 +15,7 @@ namespace MoneyMapDotnet.Service
             _transactionService = transactionService;
         }
 
-        /// <summary>
-        /// Exports all transactions for a specific user ID to a CSV file.
-        /// </summary>
-        /// <param name="clientId">The ID of the user whose transactions are to be exported.</param>
-        /// <param name="filePath">The path where the CSV file will be saved.</param>
-        /// <returns>A task representing the asynchronous operation.</returns>
+      
         public async Task ExportTransactionsToCsvAsync(Guid clientId, string filePath)
         {
             try
