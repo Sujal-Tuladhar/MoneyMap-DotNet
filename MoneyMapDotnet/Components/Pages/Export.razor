@@ -1,0 +1,107 @@
+﻿@page "/export"
+@inject IJSRuntime JS
+@inject MoneyMapDotnet.Service.TransactionService TransactionService
+
+@using System.Text 
+@using System.Globalization 
+
+<h3 style="text-align: center; color: black; font-size: 2rem; font-weight: 400; margin-bottom: 30px; text-transform: uppercase; text-decoration: underline; letter-spacing: 1px;">Export Transactions</h3>
+
+<div style="display: flex; justify-content: center; margin-top: 20px;">
+    <button class="btn-export" @onclick="ExportTransactions">
+        Export Transactions to CSV
+    </button>
+</div>
+
+@if (isLoading)
+{
+    <p style="text-align: center; margin-top: 20px;">Exporting transactions, please wait...</p>
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <p style="text-align: center; color: red; margin-top: 20px;">@errorMessage</p>
+}
+
+@code {
+    private bool isLoading = false;
+    private string errorMessage = string.Empty;
+    private Guid clientId;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Retrieve ClientID from local storage
+        var clientIdString = await JS.InvokeAsync<string>("localStorage.getItem", "ClientID");
+        if (Guid.TryParse(clientIdString, out var parsedClientId))
+        {
+            clientId = parsedClientId;
+        }
+        else
+        {
+            errorMessage = "Invalid or missing ClientID in local storage.";
+        }
+    }
+
+    private async Task ExportTransactions()
+    {
+        isLoading = true;
+        errorMessage = string.Empty;
+
+        try
+        {
+            // Retrieve transactions for the specified user ID
+            var transactions = await TransactionService.GetTransactionDetail(clientId);
+
+            if (transactions == null || !transactions.Any())
+            {
+                errorMessage = "No transactions found for the specified user.";
+                return;
+            }
+
+            // Create the CSV content
+            var csvContent = new StringBuilder();
+            csvContent.AppendLine("Description,Budget,Type,Remarks,Date,Tags");
+
+            foreach (var transaction in transactions)
+            {
+                var formattedDate = transaction.Date?.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture) ?? "N/A";
+                var tags = transaction.Tags != null ? string.Join(";", transaction.Tags) : "N/A";
+
+                csvContent.AppendLine($"\"{transaction.Description}\",{transaction.Budget},\"{transaction.Type}\",\"{transaction.Remarks}\",{formattedDate},\"{tags}\"");
+            }
+
+            // Trigger file download using JavaScript interop
+            var fileName = $"transactions_{DateTime.Now:yyyyMMddHHmmss}.csv";
+            await JS.InvokeVoidAsync("downloadFile", fileName, csvContent.ToString());
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"An error occurred: {ex.Message}";
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+}
+
+<style>
+    .btn-export {
+        background-color: #73931d;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+        .btn-export:hover {
+            background-color: #5a7417;
+        }
+
+        .btn-export:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+</style>

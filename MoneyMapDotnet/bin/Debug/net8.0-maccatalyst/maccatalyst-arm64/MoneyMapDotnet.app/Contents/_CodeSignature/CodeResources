@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/AboutAssets.txt</key>
 		<data>
-		fOoOIKOrwye0lvrwi2L8vuTUlQ8=
+		Ve7oWyMQU154d6nUuDmFp0i6Ncs=
 		</data>
 		<key>Resources/Assets.car</key>
 		<data>
@@ -42,27 +42,27 @@
 		</data>
 		<key>Resources/wwwroot/MoneyMapDotnet.bundle.scp.css</key>
 		<data>
-		gsDV+8VHBOaMFI22r/Bbo0ipYZM=
+		gJMmFJQEKLSfKbUsetgsuJACPIw=
 		</data>
 		<key>Resources/wwwroot/MoneyMapDotnet.styles.css</key>
 		<data>
-		gsDV+8VHBOaMFI22r/Bbo0ipYZM=
+		gJMmFJQEKLSfKbUsetgsuJACPIw=
 		</data>
 		<key>Resources/wwwroot/_content/MudBlazor/MudBlazor.min.css</key>
 		<data>
-		jBPhw/jPfp7JtUKNVj2//MOHUTI=
+		0Hl+V6fmadz7LWTjkSPpxOK4+c0=
 		</data>
 		<key>Resources/wwwroot/_content/MudBlazor/MudBlazor.min.js</key>
 		<data>
-		LOQkV0jFmGwNuftqUrd8sla0wHw=
+		E/Za1xEYrDXAUOaDGKj8a69f+ew=
 		</data>
 		<key>Resources/wwwroot/css/app.css</key>
 		<data>
-		rXvEmeXbFBzc9ambD4ZPAQy/0WM=
+		E/oDUzcarmeDsgZweAT1ZZcRQ10=
 		</data>
 		<key>Resources/wwwroot/css/bootstrap/bootstrap.min.css</key>
 		<data>
-		OW9RszP/bwkm9uZ61ubJxpvqezE=
+		jtsHWseLbc++2kIJaD2gL4Lreeg=
 		</data>
 		<key>Resources/wwwroot/css/bootstrap/bootstrap.min.css.map</key>
 		<data>
@@ -74,35 +74,35 @@
 		</data>
 		<key>Resources/wwwroot/icons/Add.svg</key>
 		<data>
-		R3Czgh1d7DUuw+D6zwfVaNhnTBk=
+		4JFl+2ntdmwzBJonXHiWwDgwos4=
 		</data>
 		<key>Resources/wwwroot/icons/Dashboard.svg</key>
 		<data>
-		7Lv4Kvra1NdCzwfDeOowCkkYJWU=
+		TysDR35rAtvAr1W1HLsjRIeGMV4=
 		</data>
 		<key>Resources/wwwroot/icons/Debt.svg</key>
 		<data>
-		Rkjt16ojN1OSbvqU0/+ViJENWeo=
+		RXL518n7CL3jTikE7df9lgd/Hb8=
 		</data>
 		<key>Resources/wwwroot/icons/Export.svg</key>
 		<data>
-		nLivA6P+U2PQgIFH5ZecXtAg9Rg=
+		+JOKwUiAjEX2zWq7hheQV3sSxWw=
 		</data>
 		<key>Resources/wwwroot/icons/IE.svg</key>
 		<data>
-		kxcGdQqz+Yrnb5cFtcS9nPI0kkM=
+		5moJ8CsGRenUCNdwF4FqGD/Q3/g=
 		</data>
 		<key>Resources/wwwroot/icons/Import.svg</key>
 		<data>
-		/UiySFWlw+cbpiTOtFDijyvAclc=
+		epxPCmFyw7Qws0iMPF+BBbehniY=
 		</data>
 		<key>Resources/wwwroot/icons/Transaction.svg</key>
 		<data>
-		RJjlJG8QzGdiCkjAxwWw+Ei1goo=
+		aUq8aOx30RCgiEX24Me67dooIg8=
 		</data>
 		<key>Resources/wwwroot/index.html</key>
 		<data>
-		Y02yPnUZTH5jO1+DyijQfa3I31o=
+		47jRIp6BeJWBk1mrI/nnmDEoCkY=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -391,14 +391,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UEmAqpSvx8iXD5+E2VFa07eRjqrzmgwGGtNvBqcmeiM=
+			jzF4Q5qF+6m1kyAm+az7N7FBVAHTtNBxEEA6wT1iG5M=
 			</data>
 		</dict>
 		<key>MonoBundle/MoneyMapDotnet.pdb</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			O8te3VOqBtJrPBedU+48vFeywazWms/kTNYaJUjQyO4=
+			j9wCfQrm39aB9kpFuY6Ab5J55Z/RdrG9m36MeEOpMYo=
 			</data>
 		</dict>
 		<key>MonoBundle/MudBlazor.dll</key>
@@ -1553,7 +1553,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			c5wu4y16Bj3dq79HNICU3LsPlXFAURmBLFw2cI5yQzE=
+			W4THp77gZdDxAqAFwmz2NnUIamoAHfgQth06EJSL3W8=
 			</data>
 		</dict>
 		<key>MonoBundle/ar/Microsoft.Maui.Controls.resources.dll</key>
@@ -1826,7 +1826,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bJdvoCWV5aynHYp3sBh6gz9H6YzlZD8S/Hn/gC0inZs=
+			wKHSRDDwzo0cHV11iYJVHG9nINQUtrABCovlCClL6tY=
 			</data>
 		</dict>
 		<key>Resources/Assets.car</key>
@@ -1889,42 +1889,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LtaA+gDoeatHTau0NqN9lh9ZCl6KP/pTdfHtoReC4NI=
+			DasyESZOUJ//NmxaaV9lnCOMOUjoGdaEH3gAgTITwrA=
 			</data>
 		</dict>
 		<key>Resources/wwwroot/MoneyMapDotnet.styles.css</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LtaA+gDoeatHTau0NqN9lh9ZCl6KP/pTdfHtoReC4NI=
+			DasyESZOUJ//NmxaaV9lnCOMOUjoGdaEH3gAgTITwrA=
 			</data>
 		</dict>
 		<key>Resources/wwwroot/_content/MudBlazor/MudBlazor.min.css</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			t6Cs3Anw0lssF1OdDJG1SEQAn0E5qfvRczv05XoLraM=
+			U6odksG//lsheikC1IiKbrt4TXrOQAQMVAH81fV8+5s=
 			</data>
 		</dict>
 		<key>Resources/wwwroot/_content/MudBlazor/MudBlazor.min.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JbmjZvxR4tLFLSgV1iJMEFqHW+E9BP20xnOtJdC4dZU=
+			l8lBxj+oHfBIBy9CaJycJ0nc2DZA9Ysmt5OmeRS1vg0=
 			</data>
 		</dict>
 		<key>Resources/wwwroot/css/app.css</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BTLF4V77kY4eVi/KYkiX7sN3qti7iYglIqK0mhDBHa4=
+			K1bY5kgLeD7nMlhLfmEK3TdjOVTQGBzyOIF4YwRlzuQ=
 			</data>
 		</dict>
 		<key>Resources/wwwroot/css/bootstrap/bootstrap.min.css</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg=
+			SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0=
 			</data>
 		</dict>
 		<key>Resources/wwwroot/css/bootstrap/bootstrap.min.css.map</key>
@@ -1945,56 +1945,56 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2cZKeldo4ZxIOC/O39bXxpF+flRlx8T+uJa40JmWzVo=
+			ttAfXff1cgrwpKGeCIVjjvJo8EMhhJLeoGK9YSf42Ck=
 			</data>
 		</dict>
 		<key>Resources/wwwroot/icons/Dashboard.svg</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dsmOqFNa9TVD6kg69Kd7QR1frNKUHK2GnJZ5hmTs3dQ=
+			ITc+V3M1k5E07j/SQuEmyYYd2KdWSYxI9YqeysKPtRc=
 			</data>
 		</dict>
 		<key>Resources/wwwroot/icons/Debt.svg</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NcFTG5YdfnF1nkvONmzOO3Hf73woCK6il4um4cEccEI=
+			P/PmEaS180SxZhZnINSKz/tm6v/CtYrHYj0NmXqzyUM=
 			</data>
 		</dict>
 		<key>Resources/wwwroot/icons/Export.svg</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9cv4NVnCnRY3DAlVcnaG2tU083KqnQDrKCcP9hnIdDI=
+			OS2hZULIKlRN8yF0wF4u0CTsNl2u8I+ldP2n5hlolzc=
 			</data>
 		</dict>
 		<key>Resources/wwwroot/icons/IE.svg</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RudqDGHsgC4KPIQGYqqmhKaPNdjNSMLntqSlR6Z05Xs=
+			WwLIkST/T838EUQBaoV6QvIQOjdpV2s3jK6265tnNvc=
 			</data>
 		</dict>
 		<key>Resources/wwwroot/icons/Import.svg</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0lsY9PwekxJzlxZzvxTRmQnhMc9zL0/OXYDffVzbZQw=
+			uHXufZZLi9PwkRN4nDv1FLLxEwsCPUt1aRP4U/SJvFI=
 			</data>
 		</dict>
 		<key>Resources/wwwroot/icons/Transaction.svg</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jfHn27hwQhjdFAkv4kc0AdXsE+YlQYW8LM89h3V5qkg=
+			ReHOLo75NsMgBhQduG6Ii49NU5yU3lnZRoq6les1S5E=
 			</data>
 		</dict>
 		<key>Resources/wwwroot/index.html</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hurWsFAlJg4SF1gZORiv/hzEXKVw418wn7ZMX6KxuWU=
+			J4FlD81k6UYDDDNRD173gCHDWTqOSa7S9BcqOiDziE8=
 			</data>
 		</dict>
 	</dict>

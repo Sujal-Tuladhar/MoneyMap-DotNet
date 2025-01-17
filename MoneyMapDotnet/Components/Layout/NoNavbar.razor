@@ -1,12 +1,14 @@
 @inherits LayoutComponentBase
 
-<MudThemeProvider/>
-<MudPopoverProvider/>
-<MudDialogProvider/>
-<MudSnackbarProvider/>
+<MudThemeProvider />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
 
-<MudLayout>
-    <MudMainContent Style="background-color: #73931d; color: black;">
-        @Body
+<MudLayout Style="height: 100vh;"> <!-- Ensure the layout fills the entire viewport height -->
+    <MudMainContent Style="background-color: #73931d; color: black; height: 100%;"> <!-- Ensure MainContent fills the height -->
+        <div style="display: flex; justify-content: center; align-items: center; height: 100%;"> <!-- Center the login form vertically and horizontally -->
+            @Body
+        </div>
     </MudMainContent>
 </MudLayout>

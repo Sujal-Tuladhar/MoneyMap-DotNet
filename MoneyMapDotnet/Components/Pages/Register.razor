@@ -9,7 +9,7 @@
 
 <style>
     html, body {
-        overflow: hidden; 
+        overflow: hidden;
     }
 </style>
 
@@ -32,14 +32,14 @@
                     </div>
                     <!-- Password -->
                     <div class="mb-3">
-                        <MudTextField @bind-Value="newClient.Password" 
-                                      Label="Password" 
-                                      Variant="Variant.Outlined" 
-                                      InputType="@PasswordInput" 
-                                      Adornment="Adornment.End" 
-                                      AdornmentIcon="@PasswordInputIcon" 
-                                      OnAdornmentClick="ButtonTestclick" 
-                                      AdornmentAriaLabel="Show Password" 
+                        <MudTextField @bind-Value="newClient.Password"
+                                      Label="Password"
+                                      Variant="Variant.Outlined"
+                                      InputType="@PasswordInput"
+                                      Adornment="Adornment.End"
+                                      AdornmentIcon="@PasswordInputIcon"
+                                      OnAdornmentClick="ButtonTestclick"
+                                      AdornmentAriaLabel="Show Password"
                                       FullWidth="true" />
                     </div>
                     <!-- Currency Selection (Dropdown) -->
@@ -63,7 +63,7 @@
                         </MudAlert>
                     }
                     <!-- Success Message -->
-                    @if (registrationSucess)
+                    @if (registrationSuccess)
                     {
                         <MudAlert Severity="Severity.Success" Variant="Variant.Filled" Class="mt-3">
                             Registration Successful! Redirecting to login page...
@@ -82,7 +82,7 @@
 @code {
     private Client newClient = new Client(string.Empty, string.Empty, string.Empty);
     private string errorMsg;
-    private bool registrationSucess;
+    private bool registrationSuccess;
     private bool isShow;
     private InputType PasswordInput = InputType.Password;
     private string PasswordInputIcon = Icons.Material.Filled.VisibilityOff;
@@ -114,11 +114,17 @@
                 errorMsg = "Username already exists!";
                 return;
             }
+
+            // Generate a new GUID for the client
+            newClient.ClientId = Guid.NewGuid();
+
+            // Register the new client
             await ClientService.RegisterClient(newClient);
-            registrationSucess = true;
+            registrationSuccess = true;
+
+            // Redirect to the login page after a short delay
             await Task.Delay(3000);
             Navigation.NavigateTo("/login");
-            
         }
         catch (Exception ex)
         {

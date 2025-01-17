@@ -28,7 +28,18 @@
     <script src="_framework/blazor.webview.js" autostart="false"></script>
     <script src="_content/MudBlazor/MudBlazor.min.js"></script>
 
+    <!-- Add the downloadFile JavaScript function here -->
+    <script>
+        // Function to handle file downloads
+        function downloadFile(filename, text) {
+            const blob = new Blob([text], { type: 'text/csv' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            link.click();
+            URL.revokeObjectURL(link.href);
+        }
+    </script>
 
 </body>
-
 </html>

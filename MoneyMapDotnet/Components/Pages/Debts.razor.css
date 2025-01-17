@@ -1,0 +1,140 @@
+.outer-box {
+    background-color: #c0d38e;
+    width: 1000px;
+    height: auto; /* Changed to auto for better responsiveness */
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.logo-section {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.logo-section h2 {
+    display: inline-flex;
+    align-items: center;
+    font-size: 24px;
+    color: #333;
+}
+
+.inner-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.debt-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.debt-table th,
+.debt-table td {
+    padding: 12px; /* Increased padding for better spacing */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.debt-table th {
+    background-color: #2e7d32; /* Dark green background for headers */
+    color: white; /* White text for contrast */
+    font-weight: bold; /* Bold text for headers */
+}
+
+.debt-table tr:hover {
+    background-color: #f5faf6; /* Light green hover effect for rows */
+}
+
+.status-cleared {
+    color: #4caf50; /* Green for cleared status */
+    font-weight: bold;
+}
+
+.status-pending {
+    color: #f44336; /* Red for pending status */
+    font-weight: bold;
+}
+
+.btn-clear,
+.btn-edit,
+.btn-delete,
+.btn-submit {
+    padding: 8px 16px; /* Increased padding for better button size */
+    border: none;
+    border-radius: 8px; /* Rounded corners for buttons */
+    cursor: pointer;
+    margin-right: 8px; /* Increased margin for better spacing */
+    font-size: 14px; /* Consistent font size */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.btn-clear {
+    background-color: #4caf50; /* Green for clear button */
+    color: white;
+}
+
+.btn-clear:disabled {
+    background-color: #ccc; /* Gray for disabled state */
+    cursor: not-allowed;
+}
+
+.btn-edit {
+    background-color: #ffc107; /* Yellow for edit button */
+    color: black;
+}
+
+.btn-delete {
+    background-color: #dc3545; /* Red for delete button */
+    color: white;
+}
+
+.btn-submit {
+    background-color: #73931d; /* Green for submit button */
+    color: white;
+    width: 100%;
+    padding: 12px; /* Increased padding for better button size */
+    margin-top: 10px;
+    font-size: 16px; /* Larger font size for submit button */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Increased margin for better spacing */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px; /* Increased margin for better spacing */
+    font-weight: bold;
+    color: #2e7d32; /* Green for labels */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px; /* Increased padding for better input size */
+    border: 1px solid #c8e6c9; /* Light green border */
+    border-radius: 8px; /* Rounded corners for inputs */
+    font-size: 14px; /* Consistent font size */
+    transition: border-color 0.3s ease; /* Smooth focus effect */
+}
+
+.form-group input:focus {
+    border-color: #2e7d32; /* Dark green border on focus */
+    outline: none; /* Remove default outline */
+}
+
+.form-container, .table-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container:hover, .table-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(46, 125, 50, 0.2);
+}

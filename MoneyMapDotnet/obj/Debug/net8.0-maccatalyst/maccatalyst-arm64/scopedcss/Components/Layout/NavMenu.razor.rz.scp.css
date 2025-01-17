@@ -1,3 +1,4 @@
+/* Navbar Container */
 .navbar-toggler[b-phlqojppbi] {
     appearance: none;
     cursor: pointer;
@@ -11,19 +12,26 @@
     background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") no-repeat center/1.75rem rgba(255, 255, 255, 0.1);
 }
 
-    .navbar-toggler:checked[b-phlqojppbi] {
-        background-color: rgba(255, 255, 255, 0.5);
-    }
+.navbar-toggler:checked[b-phlqojppbi] {
+    background-color: rgba(255, 255, 255, 0.5);
+}
 
+/* Top Row */
 .top-row[b-phlqojppbi] {
     height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: #2e7d32; /* Dark green */
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
 }
 
 .navbar-brand[b-phlqojppbi] {
     font-size: 1.1rem;
+    color: white;
+    font-weight: bold;
 }
 
+/* Navbar Icons */
 .bi[b-phlqojppbi] {
     display: inline-block;
     position: relative;
@@ -46,38 +54,42 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-list-nested' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z'/%3E%3C/svg%3E");
 }
 
+/* Nav Items */
 .nav-item[b-phlqojppbi] {
     font-size: 0.9rem;
     padding-bottom: 0.5rem;
 }
 
-    .nav-item:first-of-type[b-phlqojppbi] {
-        padding-top: 1rem;
-    }
+.nav-item:first-of-type[b-phlqojppbi] {
+    padding-top: 1rem;
+}
 
-    .nav-item:last-of-type[b-phlqojppbi] {
-        padding-bottom: 1rem;
-    }
+.nav-item:last-of-type[b-phlqojppbi] {
+    padding-bottom: 1rem;
+}
 
-    .nav-item[b-phlqojppbi]  a {
-        color: #d7d7d7;
-        border-radius: 4px;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        line-height: 3rem;
-    }
+.nav-item[b-phlqojppbi]  a {
+    color: white; /* White text for better contrast */
+    border-radius: 4px;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    line-height: 3rem;
+    padding: 0 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-        .nav-item[b-phlqojppbi]  a.active {
-            background-color: rgba(255,255,255,0.37);
-            color: white;
-        }
+.nav-item[b-phlqojppbi]  a.active {
+    background-color: rgba(255, 255, 255, 0.2); /* Light green for active state */
+    color: white;
+}
 
-        .nav-item[b-phlqojppbi]  a:hover {
-            background-color: rgba(255,255,255,0.1);
-            color: white;
-        }
+.nav-item[b-phlqojppbi]  a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly lighter green on hover */
+    color: white;
+}
 
+/* Scrollable Navbar */
 .nav-scrollable[b-phlqojppbi] {
     display: none;
 }
@@ -98,4 +110,26 @@
         height: calc(100vh - 3.5rem);
         overflow-y: auto;
     }
+}
+
+/* Logout Button */
+.logout-button[b-phlqojppbi] {
+    margin-top: 20px;
+    padding: 0 1rem;
+}
+
+.logout-button button[b-phlqojppbi] {
+    width: 100%;
+    background-color: #ff4444; /* Red for logout button */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button button:hover[b-phlqojppbi] {
+    background-color: #cc0000; /* Darker red on hover */
 }

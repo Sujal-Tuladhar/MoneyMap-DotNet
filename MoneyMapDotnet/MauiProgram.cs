@@ -19,9 +19,10 @@ public static class MauiProgram
         builder.Services.AddMudServices();
         builder.Services.AddScoped<ClientService>();
         builder.Services.AddScoped<TransactionService>();
-
-
-
+        builder.Services.AddScoped<DebtService>();
+        builder.Services.AddScoped<DashboardService>();
+        builder.Services.AddScoped<Export>();
+        
 #if DEBUG
         builder.Services.AddBlazorWebViewDeveloperTools();
         builder.Logging.AddDebug();

@@ -5,7 +5,7 @@ AreAnyAssembliesTrimmed=false
 				AOTOutputDirectory=obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/nativelibraries/aot-output/
 				DedupAssembly=obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/aot-instances.dll
 				AppBundleManifestPath=bin/Debug/net8.0-maccatalyst/maccatalyst-arm64/MoneyMapDotnet.app/Contents/Info.plist
-				CacheDirectory=/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/linker-cache
+				CacheDirectory=/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/linker-cache
 				
 				Debug=true
 				DeploymentTarget=14.2
@@ -185,7 +185,7 @@ FrameworkAssembly=System.Private.CoreLib
 				IntermediateLinkDir=obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/linked/
 				InvariantGlobalization=false
 				HybridGlobalization=false
-				ItemsDirectory=/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/linker-items
+				ItemsDirectory=/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/linker-items
 				IsAppExtension=false
 				IsSimulatorBuild=False
 				LibMonoLinkMode=static

@@ -1,0 +1,433 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\service\\export.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\service\\export.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\components\\pages\\export.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\components\\pages\\export.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\components\\layout\\nonavbar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\components\\layout\\nonavbar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\components\\pages\\debts.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\components\\pages\\debts.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\components\\pages\\alltransaction.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\components\\pages\\alltransaction.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\components\\pages\\addtransaction.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\components\\pages\\addtransaction.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\components\\pages\\dashbaord.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\components\\pages\\dashbaord.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\service\\debtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\service\\debtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\service\\transactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\service\\transactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\service\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\service\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\service\\dashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\service\\dashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\models\\debt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\models\\debt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|c:\\users\\sunab\\source\\repos\\moneymap-dotnet\\moneymapdotnet\\data\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5D6952E-DF80-4592-8A6D-9BBAB8519B83}|MoneyMapDotnet\\MoneyMapDotnet.csproj|solutionrelative:moneymapdotnet\\data\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sunab\\source\\repos\\PersonalExpenseTracker-APP-DEV\\MauiApp2\\Data\\Service\\TransactionService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\wwwroot\\index.html",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\wwwroot\\index.html",
+              "RelativeToolTip": "MoneyMapDotnet\\wwwroot\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-01-16T15:15:32.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Export.razor",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Pages\\Export.razor",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Components\\Pages\\Export.razor",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Pages\\Export.razor",
+              "RelativeToolTip": "MoneyMapDotnet\\Components\\Pages\\Export.razor",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAswGoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-16T15:12:27.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Export.cs",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Service\\Export.cs",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Service\\Export.cs",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Service\\Export.cs",
+              "RelativeToolTip": "MoneyMapDotnet\\Service\\Export.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwD4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T14:48:42.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AllTransaction.razor",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Pages\\AllTransaction.razor",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Components\\Pages\\AllTransaction.razor",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Pages\\AllTransaction.razor",
+              "RelativeToolTip": "MoneyMapDotnet\\Components\\Pages\\AllTransaction.razor",
+              "ViewState": "AgIAALgAAAAAAAAAAAAwwM8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-16T12:22:27.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Debts.razor",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Pages\\Debts.razor",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Components\\Pages\\Debts.razor",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Pages\\Debts.razor",
+              "RelativeToolTip": "MoneyMapDotnet\\Components\\Pages\\Debts.razor",
+              "ViewState": "AgIAAPEAAAAAAAAAAAAwwAgBAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-16T14:05:27.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Pages\\Login.razor",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Components\\Pages\\Login.razor",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Pages\\Login.razor",
+              "RelativeToolTip": "MoneyMapDotnet\\Components\\Pages\\Login.razor",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAAAIoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-16T12:30:37.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "MoneyMapDotnet\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-16T14:05:07.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "TransactionService.cs",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Service\\TransactionService.cs",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Service\\TransactionService.cs",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Service\\TransactionService.cs",
+              "RelativeToolTip": "MoneyMapDotnet\\Service\\TransactionService.cs",
+              "ViewState": "AgIAAOMAAAAAAAAAAAAuwAsBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T12:28:10.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "MoneyMapDotnet\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAACoAAAAAAAAAAAAqwGAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-16T14:03:51.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\MauiProgram.cs",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\MauiProgram.cs",
+              "RelativeToolTip": "MoneyMapDotnet\\MauiProgram.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T13:34:23.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Transaction.cs",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Models\\Transaction.cs",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Models\\Transaction.cs",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Models\\Transaction.cs",
+              "RelativeToolTip": "MoneyMapDotnet\\Models\\Transaction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T12:48:58.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NoNavbar.razor",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Layout\\NoNavbar.razor",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Components\\Layout\\NoNavbar.razor",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Layout\\NoNavbar.razor",
+              "RelativeToolTip": "MoneyMapDotnet\\Components\\Layout\\NoNavbar.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-16T14:11:09.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Components\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "MoneyMapDotnet\\Components\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-16T14:03:53.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AddTransaction.razor",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Pages\\AddTransaction.razor",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Components\\Pages\\AddTransaction.razor",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Pages\\AddTransaction.razor",
+              "RelativeToolTip": "MoneyMapDotnet\\Components\\Pages\\AddTransaction.razor",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAAAA0BAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-16T14:52:48.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DebtService.cs",
+              "DocumentMoniker": "C:\\Users\\sunab\\Source\\Repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Service\\DebtService.cs",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Service\\DebtService.cs",
+              "ToolTip": "C:\\Users\\sunab\\Source\\Repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Service\\DebtService.cs",
+              "RelativeToolTip": "MoneyMapDotnet\\Service\\DebtService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T13:21:53.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Dashbaord.razor",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Pages\\Dashbaord.razor",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Components\\Pages\\Dashbaord.razor",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Pages\\Dashbaord.razor",
+              "RelativeToolTip": "MoneyMapDotnet\\Components\\Pages\\Dashbaord.razor",
+              "ViewState": "AgIAADgBAAAAAAAAAAAuwEIBAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-16T12:57:29.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DashboardService.cs",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Service\\DashboardService.cs",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Service\\DashboardService.cs",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Service\\DashboardService.cs",
+              "RelativeToolTip": "MoneyMapDotnet\\Service\\DashboardService.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAI4AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T14:16:54.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ClientService.cs",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Service\\ClientService.cs",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Service\\ClientService.cs",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Service\\ClientService.cs",
+              "RelativeToolTip": "MoneyMapDotnet\\Service\\ClientService.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAqwE4AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T12:30:50.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Routes.razor",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Routes.razor",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Components\\Routes.razor",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\Routes.razor",
+              "RelativeToolTip": "MoneyMapDotnet\\Components\\Routes.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-16T14:03:58.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\_Imports.razor",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Components\\_Imports.razor",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Components\\_Imports.razor",
+              "RelativeToolTip": "MoneyMapDotnet\\Components\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-16T14:03:59.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Debt.cs",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Models\\Debt.cs",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Models\\Debt.cs",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Models\\Debt.cs",
+              "RelativeToolTip": "MoneyMapDotnet\\Models\\Debt.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T12:44:50.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Client.cs",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Models\\Client.cs",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Models\\Client.cs",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Models\\Client.cs",
+              "RelativeToolTip": "MoneyMapDotnet\\Models\\Client.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T12:52:27.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Utils.cs",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Data\\Utils.cs",
+              "RelativeDocumentMoniker": "MoneyMapDotnet\\Data\\Utils.cs",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\MoneyMap-DotNet\\MoneyMapDotnet\\Data\\Utils.cs",
+              "RelativeToolTip": "MoneyMapDotnet\\Data\\Utils.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAkwEYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T12:47:29.59Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "TransactionService.cs",
+              "DocumentMoniker": "C:\\Users\\sunab\\source\\repos\\PersonalExpenseTracker-APP-DEV\\MauiApp2\\Data\\Service\\TransactionService.cs",
+              "RelativeDocumentMoniker": "..\\PersonalExpenseTracker-APP-DEV\\MauiApp2\\Data\\Service\\TransactionService.cs",
+              "ToolTip": "C:\\Users\\sunab\\source\\repos\\PersonalExpenseTracker-APP-DEV\\MauiApp2\\Data\\Service\\TransactionService.cs",
+              "RelativeToolTip": "..\\PersonalExpenseTracker-APP-DEV\\MauiApp2\\Data\\Service\\TransactionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T12:24:44.551Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

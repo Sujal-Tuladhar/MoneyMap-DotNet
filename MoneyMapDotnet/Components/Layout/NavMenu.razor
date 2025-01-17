@@ -3,8 +3,8 @@
 @inject IJSRuntime JS
 
 <!-- Sidebar Drawer -->
-<MudDrawer Style="background-color: #73931d; " Class="text-black"  Open="true" Elevation="1"  Width="260px" ClipMode="DrawerClipMode.Always">
-    <MudNavMenu >
+<MudDrawer Style="background-color: #2e7d32;" Class="text-white" Open="true" Elevation="1" Width="260px" ClipMode="DrawerClipMode.Always">
+    <MudNavMenu>
         <!-- Title at the top -->
         <MudText Typo="Typo.h5" Class="px-4 py-2">
             MoneyMap
@@ -12,54 +12,31 @@
         <MudDivider Class="mb-5 mt-3" />
 
         <!-- Navigation Links -->
-        <MudNavLink Href="/dashboard"     Icon="@dashbaordIcon">
+        <MudNavLink Href="/dashboard" Icon="@dashbaordIcon">
             Dashboard
         </MudNavLink>
         <MudNavLink Href="/addTransaction" Icon="@addIcon">
             Add Transactions
         </MudNavLink>
-
         <MudNavLink Href="/allTransaction" Icon="@tranIcon">
             Transactions
         </MudNavLink>
-        <MudNavLink Href="/debt" Icon="@debtIcon">
+        <MudNavLink Href="/debts" Icon="@debtIcon">
             Debt
         </MudNavLink>
-        <MudNavLink Href="/impexp" Icon="@ieIcon">
-            Import / Export
+        <MudNavLink Href="/export" Icon="@ieIcon">
+            Export
         </MudNavLink>
 
-
-        <!-- Spacer to push logout and user info to the bottom -->
-        <MudSpacer />
-        <MudDivider Class="mt-2 " />
-        <MudText Typo="Typo.body1" Class="text-black px-4 mt-2 mb-4 mud-text-secondary">
-            <p style="font-size: 18px;">
-                Details:
-            </p>
-
-            <p style="display: flex">
-
-                Name: @userName
-            </p>
-        </MudText>
-        <!--  Logout -->
-        <MudDivider Class="mt-2 mb-3 " />
-        <div style="padding-left: 30px">
-            <MudButton FullWidth="false"
-                       Style="border: none; 
-                          width: 120px; 
-                          border-radius: 25px; 
-                          background-color: #ff4444; 
-                          color: white; 
-                          padding: 8px 16px; 
-                          font-size: 14px; 
-                          font-weight: 500; 
-                          transition: all 0.3s ease;"
+        <!-- Logout -->
+        <MudDivider Class="mt-2 mb-3" />
+        <div class="logout-button">
+            <MudButton FullWidth="true"
+                       Style="border: none; border-radius: 25px; background-color: #ff4444; color: white; padding: 8px 16px; font-size: 14px; font-weight: 500; transition: all 0.3s ease;"
                        Color="Color.Error"
                        OnClick="HandleLogout"
                        StartIcon="@Icons.Material.Filled.Logout"
-                       Class="mt-2 mb-3  mx-auto"
+                       Class="mt-2 mb-3 mx-auto"
                        onmouseover="this.style.backgroundColor='#cc0000';"
                        onmouseout="this.style.backgroundColor='#ff4444';">
                 Logout
@@ -82,7 +59,7 @@ private string userName = "Loading...";
 protected override async Task OnInitializedAsync()
 {
 // Fetch user name from local storage
-userName = await JS.InvokeAsync<string>("localStorage.getItem", "currentUser") ?? "Guest";
+userName = await JS.InvokeAsync<string>("localStorage.getItem", "ClientID") ?? "Guest";
 }
 
 private async Task HandleLogout()

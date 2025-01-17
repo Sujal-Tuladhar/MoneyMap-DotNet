@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/MoneyMapDotnet.csproj": {}
+    "/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/MoneyMapDotnet.csproj": {}
   },
   "projects": {
-    "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/MoneyMapDotnet.csproj": {
+    "/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/MoneyMapDotnet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/MoneyMapDotnet.csproj",
+        "projectUniqueName": "/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/MoneyMapDotnet.csproj",
         "projectName": "MoneyMapDotnet",
-        "projectPath": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/MoneyMapDotnet.csproj",
+        "projectPath": "/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/MoneyMapDotnet.csproj",
         "packagesPath": "/Users/sujaltuladhar/.nuget/packages/",
-        "outputPath": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/obj/",
+        "outputPath": "/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/obj/",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [

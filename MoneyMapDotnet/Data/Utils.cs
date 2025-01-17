@@ -2,11 +2,11 @@ using System.Text.Json;
 
 namespace MoneyMapDotnet.Data
 {
-
     public class Utils
     {
         private const string MoneyMap_Folder = "MoneyMapDotnetData";
 
+        // Get the base directory for storing data
         public static string GetDirectory()
         {
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -22,10 +22,17 @@ namespace MoneyMapDotnet.Data
 
             return directoryPath;
         }
+
         // Get the path for storing client.json
         public static string GetClientsPath() => Path.Combine(GetDirectory(), "client.json");
-        
+
+        // Get the path for storing transaction.json
         public static string GetTransactionPath() => Path.Combine(GetDirectory(), "transaction.json");
+
+        // Get the path for storing debt.json
+        public static string GetDebtPath() => Path.Combine(GetDirectory(), "debt.json");
+
+        // Save any data to a JSON file
         public static async Task SaveJson<T>(T data, string path)
         {
             try
@@ -38,6 +45,8 @@ namespace MoneyMapDotnet.Data
                 Console.WriteLine($"Error saving to file: {ex.Message}");
             }
         }
+
+        // Load data from a JSON file
         public static async Task<T> LoadJson<T>(string path)
         {
             try

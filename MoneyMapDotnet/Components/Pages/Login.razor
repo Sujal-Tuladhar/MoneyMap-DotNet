@@ -32,7 +32,6 @@
                                   FullWidth="true" Class="mb-3" />
 
                     <!-- Password -->
-
                     <MudTextField @bind-Value="loginModel.Password"
                                   Label="Password"
                                   Variant="Variant.Outlined"
@@ -71,6 +70,7 @@
         </div>
     </div>
 </div>
+
 @code {
     private bool isShow;
     private InputType PasswordInput = InputType.Password;
@@ -91,6 +91,7 @@
             PasswordInput = InputType.Text;
         }
     }
+
     private class LoginModel
     {
         public string Username { get; set; } = string.Empty;
@@ -117,14 +118,14 @@
             }
 
             // Validate password
-            if (!ClientService.ValidateClient (user, loginModel.Password))
+            if (!ClientService.ValidateClient(user, loginModel.Password))
             {
                 errorMessage = "Invalid username or password";
                 return;
             }
 
-            // Store user information in local storage or session
-            await JS.InvokeVoidAsync("localStorage.setItem", "currentUser", user.Username);
+            // Store ClientID and Currency in local storage
+            await JS.InvokeVoidAsync("localStorage.setItem", "ClientID", user.ClientId.ToString());
             await JS.InvokeVoidAsync("localStorage.setItem", "userCurrency", user.Currency);
 
             // Redirect to main page or dashboard

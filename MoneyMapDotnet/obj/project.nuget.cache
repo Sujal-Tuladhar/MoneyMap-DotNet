@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZjKLzX6zj6Y=",
+  "dgSpecHash": "N2Gldf7uOO0=",
   "success": true,
-  "projectFilePath": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/MoneyMapDotnet.csproj",
+  "projectFilePath": "/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/MoneyMapDotnet.csproj",
   "expectedPackageFiles": [
     "/Users/sujaltuladhar/.nuget/packages/googlegson/2.10.1.4/googlegson.2.10.1.4.nupkg.sha512",
     "/Users/sujaltuladhar/.nuget/packages/microsoft.aspnetcore.authorization/8.0.11/microsoft.aspnetcore.authorization.8.0.11.nupkg.sha512",

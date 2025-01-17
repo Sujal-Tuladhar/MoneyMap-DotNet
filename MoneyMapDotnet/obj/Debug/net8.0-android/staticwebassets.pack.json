@@ -1,27 +1,55 @@
 {
   "Files": [
     {
-      "Id": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/obj/Debug/net8.0-android/scopedcss/bundle/MoneyMapDotnet.styles.css",
+      "Id": "/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/obj/Debug/net8.0-android/scopedcss/bundle/MoneyMapDotnet.styles.css",
       "PackagePath": "staticwebassets/MoneyMapDotnet.styles.css"
     },
     {
-      "Id": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/wwwroot/css/app.css",
+      "Id": "/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/wwwroot/css/app.css",
       "PackagePath": "staticwebassets/css/app.css"
     },
     {
-      "Id": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/wwwroot/css/bootstrap/bootstrap.min.css",
+      "Id": "/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/wwwroot/css/bootstrap/bootstrap.min.css",
       "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css"
     },
     {
-      "Id": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/wwwroot/css/bootstrap/bootstrap.min.css.map",
+      "Id": "/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/wwwroot/css/bootstrap/bootstrap.min.css.map",
       "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css.map"
     },
     {
-      "Id": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/wwwroot/favicon.png",
+      "Id": "/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/wwwroot/favicon.png",
       "PackagePath": "staticwebassets/favicon.png"
     },
     {
-      "Id": "/Users/sujaltuladhar/RiderProjects/MoneyMapDotnet/MoneyMapDotnet/wwwroot/index.html",
+      "Id": "/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/wwwroot/icons/Add.svg",
+      "PackagePath": "staticwebassets/icons/Add.svg"
+    },
+    {
+      "Id": "/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/wwwroot/icons/Dashboard.svg",
+      "PackagePath": "staticwebassets/icons/Dashboard.svg"
+    },
+    {
+      "Id": "/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/wwwroot/icons/Debt.svg",
+      "PackagePath": "staticwebassets/icons/Debt.svg"
+    },
+    {
+      "Id": "/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/wwwroot/icons/Export.svg",
+      "PackagePath": "staticwebassets/icons/Export.svg"
+    },
+    {
+      "Id": "/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/wwwroot/icons/IE.svg",
+      "PackagePath": "staticwebassets/icons/IE.svg"
+    },
+    {
+      "Id": "/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/wwwroot/icons/Import.svg",
+      "PackagePath": "staticwebassets/icons/Import.svg"
+    },
+    {
+      "Id": "/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/wwwroot/icons/Transaction.svg",
+      "PackagePath": "staticwebassets/icons/Transaction.svg"
+    },
+    {
+      "Id": "/Users/sujaltuladhar/Desktop/MoneyMap-DotNet/MoneyMapDotnet/wwwroot/index.html",
       "PackagePath": "staticwebassets/index.html"
     },
     {

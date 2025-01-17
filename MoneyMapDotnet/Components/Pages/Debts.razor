@@ -1,0 +1,146 @@
+﻿@page "/debts"
+@using MoneyMapDotnet.Models
+@using MoneyMapDotnet.Service
+@inject DebtService DebtService
+@inject IJSRuntime JS
+@inject NavigationManager NavigationManager
+
+<div class="outer-box">
+    <h3 style="color: #2e7d32; font-size: 2rem; font-weight: 600; margin-bottom: 20px; text-align: center;">Debts</h3>
+
+    <div class="inner-box">
+        <!-- Add New Debt Form -->
+        <div class="form-container">
+            <h4 style="color: #2e7d32; font-size: 1.5rem; margin-bottom: 20px;">Add New Debt</h4>
+            <form @onsubmit="AddNewDebt">
+                <div class="form-group">
+                    <label for="source">Source:</label>
+                    <input type="text" id="source" @bind="newDebt.Source" required />
+                </div>
+                <div class="form-group">
+                    <label for="amountOwed">Amount Owed:</label>
+                    <input type="number" id="amountOwed" @bind="newDebt.AmountOwed" step="0.01" required />
+                </div>
+                <div class="form-group">
+                    <label for="dueDate">Due Date:</label>
+                    <input type="date" id="dueDate" @bind="newDebt.DueDate" required />
+                </div>
+                <button type="submit" class="btn-submit">Add Debt</button>
+            </form>
+        </div>
+
+        <!-- Debts Table -->
+        @if (debts == null)
+        {
+        <p style="text-align: center; color: #666;">Loading debts...</p>
+        }
+        else
+        {
+        <div class="table-container">
+            <table class="debt-table">
+                <thead>
+                <tr>
+                    <th>Source</th>
+                    <th>Amount Owed</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var debt in debts)
+                {
+                <tr>
+                    <td>@debt.Source</td>
+                    <td>@GetCurrencySymbol()@debt.AmountOwed.ToString("N2")</td>
+                    <td>@debt.DueDate.ToShortDateString()</td>
+                    <td>
+                        @if (debt.IsCleared)
+                        {
+                        <span class="status-cleared">Cleared</span>
+                        }
+                        else
+                        {
+                        <span class="status-pending">Pending</span>
+                        }
+                    </td>
+                    <td>
+                        <button class="btn-clear" @onclick="() => ClearDebt(debt.Source)" disabled="@debt.IsCleared">Clear</button>
+                        <button class="btn-delete" @onclick="() => DeleteDebt(debt.Source)">Delete</button>
+                    </td>
+                </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+        }
+    </div>
+</div>
+
+@code {
+    private List<Debt> debts;
+    private Debt newDebt = new Debt("", 0, DateTime.Now, Guid.Empty);
+    private Guid clientId;
+    private string userCurrency = "USD"; // Default currency
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Retrieve ClientID from local storage
+        var clientIdString = await JS.InvokeAsync<string>("localStorage.getItem", "ClientID");
+        if (Guid.TryParse(clientIdString, out var parsedClientId))
+        {
+            clientId = parsedClientId;
+            debts = await DebtService.GetDebtsByClientAsync(clientId);
+        }
+        else
+        {
+            Console.WriteLine("Invalid or missing ClientID in local storage.");
+        }
+
+        // Retrieve user currency from local storage
+        userCurrency = await JS.InvokeAsync<string>("localStorage.getItem", "userCurrency") ?? "USD";
+    }
+
+    private string GetCurrencySymbol()
+    {
+        // Map currency codes to symbols
+        return userCurrency switch
+        {
+            "NPR" => "Rs ",
+            "USD" => "$",
+            "EUR" => "€",
+            "GBP" => "£",
+            "JPY" => "¥",
+            _ => "$" // Default to USD symbol if currency is not recognized
+        };
+    }
+
+    private async Task AddNewDebt()
+    {
+        newDebt.ClientID = clientId;
+        await DebtService.AddDebtAsync(newDebt);
+        debts = await DebtService.GetDebtsByClientAsync(clientId);
+        newDebt = new Debt("", 0, DateTime.Now, Guid.Empty); // Reset form
+    }
+
+    private async Task ClearDebt(string source)
+    {
+        try
+        {
+            await DebtService.ClearDebtAsync(source, clientId);
+            debts = await DebtService.GetDebtsByClientAsync(clientId);
+        }
+        catch (Exception ex)
+        {
+            await JS.InvokeVoidAsync("alert", ex.Message);
+        }
+    }
+    
+
+    private async Task DeleteDebt(string source)
+    {
+        await DebtService.DeleteDebtAsync(source, clientId);
+        debts = await DebtService.GetDebtsByClientAsync(clientId);
+    }
+}
+

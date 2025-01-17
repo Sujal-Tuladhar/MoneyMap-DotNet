@@ -3,92 +3,202 @@
 @inject MoneyMapDotnet.Service.TransactionService TransactionService
 @inject IJSRuntime JS
 
+<!-- Page Title -->
 <h3 style="text-align: center; color: black; font-size: 2rem; font-weight: 400; margin-bottom: 30px; text-transform: uppercase; text-decoration: underline; letter-spacing: 1px;">Transactions</h3>
 
+<!-- Search Card -->
 <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-    <MudDatePicker Label="Start Date" @bind-Value="startDate" />
-    <MudDatePicker Label="End Date" @bind-Value="endDate" />
-    <MudButton OnClick="FilterTransactions" Variant="Variant.Outlined" Style="margin-left: 10px;">
-        Filter
-    </MudButton>
+    <div class="card" style="background-color: #f5faf6; border-radius: 12px; box-shadow: 0 4px 12px rgba(46, 125, 50, 0.1); padding: 20px; width: 100%; max-width: 800px;">
+        <div style="display: flex; gap: 16px; align-items: center;">
+            <!-- Search by Description -->
+            <MudTextField @bind-Value="searchQuery" Label="Search by Description" Variant="Variant.Outlined" Style="flex: 1;" />
+
+            <!-- Search by Tags -->
+            <MudTextField @bind-Value="tagQuery" Label="Search by Tags" Variant="Variant.Outlined" Style="flex: 1;" />
+        </div>
+    </div>
 </div>
 
+<!-- Filter and Sort Card -->
+<div style="display: flex; justify-content: center; margin-bottom: 20px;">
+    <div class="card" style="background-color: #f5faf6; border-radius: 12px; box-shadow: 0 4px 12px rgba(46, 125, 50, 0.1); padding: 20px; width: 100%; max-width: 800px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+            <!-- Filter by Type -->
+            <MudSelect @bind-Value="selectedType" Label="Type" Variant="Variant.Outlined">
+                <MudSelectItem Value="0">All</MudSelectItem>
+                <MudSelectItem Value="1">Credit</MudSelectItem>
+                <MudSelectItem Value="2">Debit</MudSelectItem>
+            </MudSelect>
+
+            <!-- Date Range -->
+            <MudDatePicker Label="Start Date" @bind-Value="startDate" Variant="Variant.Outlined" />
+            <MudDatePicker Label="End Date" @bind-Value="endDate" Variant="Variant.Outlined" />
+
+            <!-- Sort Order -->
+            <MudSelect @bind-Value="sortOrder" Label="Sort by Date" Variant="Variant.Outlined">
+                <MudSelectItem Value="1">Ascending</MudSelectItem>
+                <MudSelectItem Value="2">Descending</MudSelectItem>
+            </MudSelect>
+        </div>
+
+        <!-- Filter and Clear Buttons -->
+        <div style="display: flex; justify-content: flex-end; gap: 16px; margin-top: 16px;">
+            <MudButton OnClick="FilterTransactions" Variant="Variant.Outlined" Color="Color.Success" Style="background-color: #2e7d32; color: white;">
+                Filter
+            </MudButton>
+            <MudButton OnClick="ClearFilters" Variant="Variant.Outlined" Color="Color.Error" Style="background-color: #ff4444; color: white;">
+                Clear
+            </MudButton>
+        </div>
+    </div>
+</div>
+
+<!-- Transactions Table -->
 <div style="display: flex; justify-content: center;">
-    <MudTable Items="Transactions" Hover="true" Class="mt-4" Style="border-collapse: separate; border-spacing: 0; width: 100%;">
-        <HeaderContent>
-            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px;">Description</MudTh>
-            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px;">Budget</MudTh>
-            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px;">Type</MudTh>
-            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px;">Remarks</MudTh>
-            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px;">Date</MudTh>
-            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px;">Tags</MudTh>
-            <MudTh Style="background-color: #9dca26; color: white; font-weight: bold; padding: 12px;">Action</MudTh>
-        </HeaderContent>
-        <RowTemplate>
-            <MudTd DataLabel="Description">@context.Description</MudTd>
-            <MudTd DataLabel="Amount">@context.Budget.ToString("C")</MudTd>
-            <MudTd DataLabel="Type">@context.Type</MudTd>
-            <MudTd DataLabel="Remarks">@context.Remarks</MudTd>
-            <MudTd DataLabel="Date">@context.Date?.ToString("MM/dd/yyyy")</MudTd>
-            <MudTd DataLabel="Tags">@string.Join(", ", @context.Tags)</MudTd>
-            <MudTd DataLabel="Action">
-                <MudButton OnClick="@(() => ConfirmDeleteTransaction(context))" Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.Delete" Style="background-color: #ff0000; color: white; border-color: #ff0000;">
-                    Delete
-                </MudButton>
-            </MudTd>
-        </RowTemplate>
-        <PagerContent>
-            <MudTablePager Style="background-color: #f9f9f9; border-radius: 0 0 8px 8px; padding: 12px;" />
-        </PagerContent>
-    </MudTable>
+    <div class="card" style="background-color: #f5faf6; border-radius: 12px; box-shadow: 0 4px 12px rgba(46, 125, 50, 0.1); padding: 20px; width: 100%; max-width: 1200px;">
+        <MudTable Items="FilteredTransactions" Hover="true" Class="mt-4" Style="border-collapse: separate; border-spacing: 0; width: 100%;">
+            <HeaderContent>
+                <MudTh Style="background-color: #2e7d32; color: white; font-weight: bold; padding: 12px;">Description</MudTh>
+                <MudTh Style="background-color: #2e7d32; color: white; font-weight: bold; padding: 12px;">Budget</MudTh>
+                <MudTh Style="background-color: #2e7d32; color: white; font-weight: bold; padding: 12px;">Type</MudTh>
+                <MudTh Style="background-color: #2e7d32; color: white; font-weight: bold; padding: 12px;">Remarks</MudTh>
+                <MudTh Style="background-color: #2e7d32; color: white; font-weight: bold; padding: 12px;">Date</MudTh>
+                <MudTh Style="background-color: #2e7d32; color: white; font-weight: bold; padding: 12px;">Tags</MudTh>
+                <MudTh Style="background-color: #2e7d32; color: white; font-weight: bold; padding: 12px;">Action</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd DataLabel="Description">@context.Description</MudTd>
+                <MudTd DataLabel="Amount">@GetCurrencySymbol()@context.Budget.ToString("N2")</MudTd> <!-- Formatted with currency symbol -->
+                <MudTd DataLabel="Type">@context.Type</MudTd>
+                <MudTd DataLabel="Remarks">@context.Remarks</MudTd>
+                <MudTd DataLabel="Date">@context.Date?.ToString("MM/dd/yyyy")</MudTd>
+                <MudTd DataLabel="Tags">@string.Join(", ", @context.Tags)</MudTd>
+                <MudTd DataLabel="Action">
+                    <MudButton OnClick="@(() => ConfirmDeleteTransaction(context))" Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.Delete" Style="background-color: #ff4444; color: white; border-color: #ff4444;">
+                        Delete
+                    </MudButton>
+                </MudTd>
+            </RowTemplate>
+            <PagerContent>
+                <MudTablePager Style="background-color: #f9f9f9; border-radius: 0 0 8px 8px; padding: 12px;" />
+            </PagerContent>
+        </MudTable>
+    </div>
 </div>
 
 @code {
     private List<Transaction> Transactions = new List<Transaction>();
+    private List<Transaction> FilteredTransactions = new List<Transaction>();
+    private string searchQuery = string.Empty;
+    private string tagQuery = string.Empty;
+    private int selectedType = 0; // 0 for All, 1 for Credit, 2 for Debit
     private DateTime? startDate;
     private DateTime? endDate;
-    private string currentUser;
+    private int sortOrder = 1; // 1 for Ascending, 2 for Descending
+    private Guid clientId;
+    private string userCurrency = "USD"; // Default currency
 
     protected override async Task OnInitializedAsync()
     {
-        currentUser = await JS.InvokeAsync<string>("localStorage.getItem", "currentUser");
-        if (!string.IsNullOrEmpty(currentUser))
+        // Retrieve ClientID from local storage
+        var clientIdString = await JS.InvokeAsync<string>("localStorage.getItem", "ClientID");
+        if (Guid.TryParse(clientIdString, out var parsedClientId))
         {
+            clientId = parsedClientId;
             await LoadTransactions();
         }
+        else
+        {
+            Console.WriteLine("Invalid ClientID in local storage.");
+        }
+
+        // Retrieve user currency from local storage
+        userCurrency = await JS.InvokeAsync<string>("localStorage.getItem", "userCurrency") ?? "USD";
+    }
+
+    private string GetCurrencySymbol()
+    {
+        // Map currency codes to symbols
+        return userCurrency switch
+        {
+            "NPR" => "Rs ",
+            "USD" => "$",
+            "EUR" => "�",
+            "GBP" => "�",
+            "JPY" => "�",
+            _ => "$" // Default to USD symbol if currency is not recognized
+        };
     }
 
     private async Task LoadTransactions()
     {
-        if (!string.IsNullOrEmpty(currentUser))
+        if (clientId != Guid.Empty)
         {
-            Transactions = await TransactionService.GetTransactionDetail(currentUser);
+            Transactions = await TransactionService.GetTransactionDetail(clientId);
+            ApplyFilters();
         }
+    }
+
+    private void ApplyFilters()
+    {
+        var filtered = Transactions.AsQueryable();
+
+        // Apply search by description
+        if (!string.IsNullOrEmpty(searchQuery))
+        {
+            filtered = filtered.Where(t => t.Description.Contains(searchQuery, StringComparison.OrdinalIgnoreCase));
+        }
+
+        // Apply search by tags
+        if (!string.IsNullOrEmpty(tagQuery))
+        {
+            filtered = filtered.Where(t => t.Tags.Any(tag => tag.Contains(tagQuery, StringComparison.OrdinalIgnoreCase)));
+        }
+
+        // Apply filter by type
+        if (selectedType == 1)
+        {
+            filtered = filtered.Where(t => t.Type == "Credit");
+        }
+        else if (selectedType == 2)
+        {
+            filtered = filtered.Where(t => t.Type == "Debit");
+        }
+
+        // Apply date range filter
+        if (startDate.HasValue && endDate.HasValue)
+        {
+            filtered = filtered.Where(t => t.Date.HasValue && t.Date.Value.Date >= startDate.Value.Date && t.Date.Value.Date <= endDate.Value.Date);
+        }
+
+        // Apply sorting
+        if (sortOrder == 1)
+        {
+            filtered = filtered.OrderBy(t => t.Date);
+        }
+        else
+        {
+            filtered = filtered.OrderByDescending(t => t.Date);
+        }
+
+        FilteredTransactions = filtered.ToList();
     }
 
     private async Task FilterTransactions()
     {
-        if (startDate.HasValue && endDate.HasValue && !string.IsNullOrEmpty(currentUser))
-        {
-            Console.WriteLine($"Filtering from {startDate.Value.Date} to {endDate.Value.Date}");
-            Transactions = await TransactionService.GetTransactionsByDateRange(currentUser, startDate.Value, endDate.Value);
-
-            if (Transactions.Count == 0)
-            {
-                Console.WriteLine("No transactions found for the given date range.");
-            }
-            else
-            {
-                Console.WriteLine($"Found {Transactions.Count} transactions.");
-            }
-        }
-        else
-        {
-            Console.WriteLine("Invalid date range or user not found.");
-            Transactions = new List<Transaction>();
-        }
+        ApplyFilters();
     }
 
+    private async Task ClearFilters()
+    {
+        searchQuery = string.Empty;
+        tagQuery = string.Empty;
+        selectedType = 0;
+        startDate = null;
+        endDate = null;
+        sortOrder = 1;
+        await LoadTransactions(); // Reload all transactions
+    }
 
     private async Task ConfirmDeleteTransaction(Transaction transaction)
     {
@@ -101,7 +211,14 @@
 
     private async Task DeleteTransaction(Transaction transaction)
     {
-        await TransactionService.DeleteTransactionData(transaction.Description, transaction.Date, currentUser);
-        await LoadTransactions(); // Refresh the transaction list after deletion
+        try
+        {
+            await TransactionService.DeleteTransactionData(transaction.Description, transaction.Date, clientId);
+            await LoadTransactions(); // Refresh the transaction list after deletion
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error deleting transaction: {ex.Message}");
+        }
     }
 }
