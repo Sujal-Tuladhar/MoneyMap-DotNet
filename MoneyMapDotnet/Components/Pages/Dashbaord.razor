@@ -12,178 +12,193 @@
     <div class="inner-box">
         <h3>Dashboard</h3>
 
+        <!-- Date Filter Section -->
+        <div class="date-filter">
+            <div class="filter-container">
+                <div class="filter-item">
+                    <label for="startDate">Start Date:</label>
+                    <input type="date" @bind="startDate" id="startDate" class="filter-input" />
+                </div>
+                <div class="filter-item">
+                    <label for="endDate">End Date:</label>
+                    <input type="date" @bind="endDate" id="endDate" class="filter-input" />
+                </div>
+                <button @onclick="ApplyDateFilter" class="filter-button">Apply Filter</button>
+            </div>
+        </div>
+
         @if (dashboardData == null)
         {
-        <p>Loading dashboard data...</p>
+            <p>Loading dashboard data...</p>
         }
         else
         {
-        <!-- Card-1: Summary Section -->
-        <div class="card-1">
-            <div class="summary-card">
-                <h4>Current Balance</h4>
-                <p>@FormatCurrency(dashboardData.CurrentBalance)</p>
-            </div>
-            <div class="summary-card">
-                <h4>Total Credit</h4>
-                <p>@FormatCurrency(dashboardData.TotalCredit)</p>
-            </div>
-            <div class="summary-card">
-                <h4>Total Debit</h4>
-                <p>@FormatCurrency(dashboardData.TotalDebit)</p>
-            </div>
-            <div class="summary-card">
-                <h4>Total Debt</h4>
-                <p>@FormatCurrency(dashboardData.TotalDebt)</p>
-            </div>
-            <div class="summary-card">
-                <h4>Remaining Debt</h4>
-                <p>@FormatCurrency(dashboardData.RemainingDebt)</p>
-            </div>
-        </div>
-
-        <!-- Card-2 and Card-3: Doughnut Chart and Top 5 Tables -->
-        <div class="chart-and-tables">
-            <!-- Card-2: Doughnut Chart -->
-            <div class="card-2">
-                <h4>Credit vs Debit</h4>
-                <MudPaper Class="pa-4">
-                    <MudChart ChartType="ChartType.Donut" Width="100%" Height="300px" InputData="@dashboardData.CreditDebitData.Data" InputLabels="@dashboardData.CreditDebitData.Labels"></MudChart>
-                </MudPaper>
+            <!-- Card-1: Summary Section -->
+            <div class="card-1">
+                <div class="summary-card">
+                    <h4>Current Balance</h4>
+                    <p>@FormatCurrency(dashboardData.CurrentBalance)</p>
+                </div>
+                <div class="summary-card">
+                    <h4>Total Credit</h4>
+                    <p>@FormatCurrency(dashboardData.TotalCredit)</p>
+                </div>
+                <div class="summary-card">
+                    <h4>Total Debit</h4>
+                    <p>@FormatCurrency(dashboardData.TotalDebit)</p>
+                </div>
+                <div class="summary-card">
+                    <h4>Total Debt</h4>
+                    <p>@FormatCurrency(dashboardData.TotalDebt)</p>
+                </div>
+                <div class="summary-card">
+                    <h4>Remaining Debt</h4>
+                    <p>@FormatCurrency(dashboardData.RemainingDebt)</p>
+                </div>
             </div>
 
-            <!-- Card-3: Top 5 Tables -->
-            <div class="card-3">
+            <!-- Card-2 and Card-3: Doughnut Chart and Top 5 Tables -->
+            <div class="chart-and-tables">
+                <!-- Card-2: Doughnut Chart -->
+                <div class="card-2">
+                    <h4>Credit vs Debit</h4>
+                    <MudPaper Class="pa-4">
+                        <MudChart ChartType="ChartType.Donut" Width="100%" Height="300px" InputData="@dashboardData.CreditDebitData.Data" InputLabels="@dashboardData.CreditDebitData.Labels"></MudChart>
+                    </MudPaper>
+                </div>
+
+                <!-- Card-3: Top 5 Tables -->
+                <div class="card-3">
+                    <div class="top-section">
+                        <h4>Top 5 Highest Credits</h4>
+                        <table class="top-table">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var credit in dashboardData.Top5HighestCredits)
+                                {
+                                    <tr>
+                                        <td>@credit.Description</td>
+                                        <td>@FormatCurrency(credit.Budget)</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="top-section">
+                        <h4>Top 5 Lowest Credits</h4>
+                        <table class="top-table">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var credit in dashboardData.Top5LowestCredits)
+                                {
+                                    <tr>
+                                        <td>@credit.Description</td>
+                                        <td>@FormatCurrency(credit.Budget)</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="top-section">
+                        <h4>Top 5 Highest Debits</h4>
+                        <table class="top-table">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var debit in dashboardData.Top5HighestDebits)
+                                {
+                                    <tr>
+                                        <td>@debit.Description</td>
+                                        <td>@FormatCurrency(debit.Budget)</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="top-section">
+                        <h4>Top 5 Lowest Debits</h4>
+                        <table class="top-table">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var debit in dashboardData.Top5LowestDebits)
+                                {
+                                    <tr>
+                                        <td>@debit.Description</td>
+                                        <td>@FormatCurrency(debit.Budget)</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card-4: Top 5 Debts and Pending Debts -->
+            <div class="card-4">
                 <div class="top-section">
-                    <h4>Top 5 Highest Credits</h4>
+                    <h4>Top 5 Debts</h4>
                     <table class="top-table">
                         <thead>
-                        <tr>
-                            <th>Description</th>
-                            <th>Amount</th>
-                        </tr>
+                            <tr>
+                                <th>Source</th>
+                                <th>Amount Owed</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        @foreach (var credit in dashboardData.Top5HighestCredits)
-                        {
-                        <tr>
-                            <td>@credit.Description</td>
-                            <td>@FormatCurrency(credit.Budget)</td>
-                        </tr>
-                        }
+                            @foreach (var debt in dashboardData.Top5Debts)
+                            {
+                                <tr>
+                                    <td>@debt.Source</td>
+                                    <td>@FormatCurrency(debt.AmountOwed)</td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                 </div>
 
                 <div class="top-section">
-                    <h4>Top 5 Lowest Credits</h4>
+                    <h4>Pending Debts</h4>
                     <table class="top-table">
                         <thead>
-                        <tr>
-                            <th>Description</th>
-                            <th>Amount</th>
-                        </tr>
+                            <tr>
+                                <th>Source</th>
+                                <th>Amount Owed</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        @foreach (var credit in dashboardData.Top5LowestCredits)
-                        {
-                        <tr>
-                            <td>@credit.Description</td>
-                            <td>@FormatCurrency(credit.Budget)</td>
-                        </tr>
-                        }
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="top-section">
-                    <h4>Top 5 Highest Debits</h4>
-                    <table class="top-table">
-                        <thead>
-                        <tr>
-                            <th>Description</th>
-                            <th>Amount</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach (var debit in dashboardData.Top5HighestDebits)
-                        {
-                        <tr>
-                            <td>@debit.Description</td>
-                            <td>@FormatCurrency(debit.Budget)</td>
-                        </tr>
-                        }
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="top-section">
-                    <h4>Top 5 Lowest Debits</h4>
-                    <table class="top-table">
-                        <thead>
-                        <tr>
-                            <th>Description</th>
-                            <th>Amount</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach (var debit in dashboardData.Top5LowestDebits)
-                        {
-                        <tr>
-                            <td>@debit.Description</td>
-                            <td>@FormatCurrency(debit.Budget)</td>
-                        </tr>
-                        }
+                            @foreach (var debt in dashboardData.PendingDebts)
+                            {
+                                <tr>
+                                    <td>@debt.Source</td>
+                                    <td>@FormatCurrency(debt.AmountOwed)</td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                 </div>
             </div>
-        </div>
-
-        <!-- Card-4: Top 5 Debts and Pending Debts -->
-        <div class="card-4">
-            <div class="top-section">
-                <h4>Top 5 Debts</h4>
-                <table class="top-table">
-                    <thead>
-                    <tr>
-                        <th>Source</th>
-                        <th>Amount Owed</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach (var debt in dashboardData.Top5Debts)
-                    {
-                    <tr>
-                        <td>@debt.Source</td>
-                        <td>@FormatCurrency(debt.AmountOwed)</td>
-                    </tr>
-                    }
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="top-section">
-                <h4>Pending Debts</h4>
-                <table class="top-table">
-                    <thead>
-                    <tr>
-                        <th>Source</th>
-                        <th>Amount Owed</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach (var debt in dashboardData.PendingDebts)
-                    {
-                    <tr>
-                        <td>@debt.Source</td>
-                        <td>@FormatCurrency(debt.AmountOwed)</td>
-                    </tr>
-                    }
-                    </tbody>
-                </table>
-            </div>
-        </div>
         }
     </div>
 </div>
@@ -191,8 +206,15 @@
 @code {
     private DashboardData dashboardData;
     private string userCurrency = "$"; // Default to USD
+    private DateTime? startDate;
+    private DateTime? endDate;
 
     protected override async Task OnInitializedAsync()
+    {
+        await LoadDashboardData();
+    }
+
+    private async Task LoadDashboardData()
     {
         // Retrieve ClientID and Currency from local storage
         var clientIdString = await JS.InvokeAsync<string>("localStorage.getItem", "ClientID");
@@ -200,20 +222,20 @@
 
         if (Guid.TryParse(clientIdString, out var clientId))
         {
-            var creditDebitData = await DashboardService.GetCreditVsDebitDataAsync(clientId);
+            var creditDebitData = await DashboardService.GetCreditVsDebitDataAsync(clientId, startDate, endDate);
 
             dashboardData = new DashboardData
                 {
-                    TotalCredit = await DashboardService.GetTotalCreditAsync(clientId),
-                    TotalDebit = await DashboardService.GetTotalDebitAsync(clientId),
+                    TotalCredit = await DashboardService.GetTotalCreditAsync(clientId, startDate, endDate),
+                    TotalDebit = await DashboardService.GetTotalDebitAsync(clientId, startDate, endDate),
                     TotalDebt = await DashboardService.GetTotalDebtAsync(clientId),
                     RemainingDebt = await DashboardService.GetRemainingDebtAsync(clientId),
-                    CurrentBalance = await DashboardService.GetCurrentBalanceAsync(clientId),
+                    CurrentBalance = await DashboardService.GetCurrentBalanceAsync(clientId, startDate, endDate),
                     CreditDebitData = creditDebitData,
-                    Top5HighestCredits = await DashboardService.GetTop5HighestCreditsAsync(clientId),
-                    Top5LowestCredits = await DashboardService.GetTop5LowestCreditsAsync(clientId),
-                    Top5HighestDebits = await DashboardService.GetTop5HighestDebitsAsync(clientId),
-                    Top5LowestDebits = await DashboardService.GetTop5LowestDebitsAsync(clientId),
+                    Top5HighestCredits = await DashboardService.GetTop5HighestCreditsAsync(clientId, startDate, endDate),
+                    Top5LowestCredits = await DashboardService.GetTop5LowestCreditsAsync(clientId, startDate, endDate),
+                    Top5HighestDebits = await DashboardService.GetTop5HighestDebitsAsync(clientId, startDate, endDate),
+                    Top5LowestDebits = await DashboardService.GetTop5LowestDebitsAsync(clientId, startDate, endDate),
                     Top5Debts = await DashboardService.GetTop5DebtsAsync(clientId),
                     PendingDebts = await DashboardService.GetPendingDebtsAsync(clientId)
                 };
@@ -223,6 +245,11 @@
             // Handle invalid or missing ClientID
             Console.WriteLine("Invalid or missing ClientID in local storage.");
         }
+    }
+
+    private async Task ApplyDateFilter()
+    {
+        await LoadDashboardData();
     }
 
     private string FormatCurrency(decimal amount)
@@ -250,4 +277,3 @@
         public List<Debt> PendingDebts { get; set; }
     }
 }
-

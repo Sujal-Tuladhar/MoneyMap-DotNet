@@ -167,3 +167,61 @@
     font-weight: bold;
     color: #333;
 }
+
+
+.date-filter {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.filter-container {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    background-color: #f5faf6; /* Light green background */
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.1); /* Subtle shadow */
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filter-item label {
+    font-weight: bold;
+    color: #2e7d32; /* Dark green text */
+}
+
+.filter-input {
+    padding: 8px;
+    border: 1px solid #c8e6c9; /* Light green border */
+    border-radius: 8px;
+    font-size: 14px;
+    color: #2e7d32; /* Dark green text */
+    background-color: white;
+    transition: border-color 0.3s ease;
+}
+
+.filter-input:focus {
+    border-color: #2e7d32; /* Dark green border on focus */
+    outline: none; /* Remove default outline */
+}
+
+.filter-button {
+    background-color: #2e7d32; /* Dark green background */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-button:hover {
+    background-color: #1e5a22; /* Darker green on hover */
+}
