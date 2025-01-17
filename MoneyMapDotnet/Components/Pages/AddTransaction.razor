@@ -6,82 +6,50 @@
 <h3 style="text-align: center; color: black; font-size: 2rem; font-weight: 600; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px;">Add New Transaction</h3>
 
 <div style="display: flex; justify-content: center;">
-    <div class="form-container" style="width: 1000px; padding: 32px; background-color: #f5faf6; border-radius: 16px; box-shadow: 0 8px 24px rgba(46, 125, 50, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <div class="form-container" style="width: 800px; padding: 32px; background-color: #f5faf6; border-radius: 16px; box-shadow: 0 8px 24px rgba(46, 125, 50, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
         @if (newTransaction != null)
         {
         <MudForm Model="newTransaction" @ref="form" Style="display: flex; flex-direction: column; gap: 24px;">
             <MudDataAnnotationsValidator />
 
-            <!-- First Row: Title and Amount -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-                <!-- Title Field -->
-                <MudTextField @bind-Value="newTransaction.Description" Label="Title" Required ErrorText="Title is required" Variant="Variant.Outlined" Margin="Margin.Dense" Immediate="true" Style="background-color: #ffffff; color: #2e7d32; border-color: #c8e6c9;" LabelStyle="color: #2e7d32;" InputStyle="color: #2e7d32;" />
+            <!-- Title Field -->
+            <MudTextField @bind-Value="newTransaction.Description" Label="Title" Required ErrorText="Title is required" Variant="Variant.Outlined" Margin="Margin.Dense" Immediate="true" Style="background-color: #ffffff; color: #2e7d32; border-color: #c8e6c9;" LabelStyle="color: #2e7d32;" InputStyle="color: #2e7d32;" />
 
-                <!-- Amount Field -->
-                <MudNumericField @bind-Value="newTransaction.Budget" Label="Amount" Required ErrorText="Amount is required" Variant="Variant.Outlined" Margin="Margin.Dense" Adornment="Adornment.Start" AdornmentIcon="@currencySymbol" Min="0" Style="background-color: #ffffff; color: #2e7d32; border-color: #c8e6c9;" LabelStyle="color: #2e7d32;" InputStyle="color: #2e7d32;" />
-            </div>
+            <!-- Amount Field -->
+            <MudNumericField @bind-Value="newTransaction.Budget" Label="Amount" Required ErrorText="Amount is required" Variant="Variant.Outlined" Margin="Margin.Dense" Adornment="Adornment.Start" AdornmentIcon="@currencySymbol" Min="0" Style="background-color: #ffffff; color: #2e7d32; border-color: #c8e6c9;" LabelStyle="color: #2e7d32;" InputStyle="color: #2e7d32;" />
 
-            <!-- Second Row: Transaction Type and Date -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-                <!-- Type Selection -->
-                <MudSelect T="string" @bind-Value="newTransaction.Type" Label="Transaction Type" Required ErrorText="Type is required" Variant="Variant.Outlined" Margin="Margin.Dense" Style="background-color: #ffffff; color: #2e7d32; border-color: #c8e6c9;" LabelStyle="color: #2e7d32;">
-                    <MudSelectItem Value="@("Credit")">
-                        <div style="display: flex; align-items: center; gap: 8px;">
-                            <MudIcon Icon="@Icons.Material.Filled.ArrowUpward" Color="Color.Success" />
-                            <span style="color: #2e7d32;">Credit</span>
-                        </div>
-                    </MudSelectItem>
-                    <MudSelectItem Value="@("Debit")">
-                        <div style="display: flex; align-items: center; gap: 8px;">
-                            <MudIcon Icon="@Icons.Material.Filled.ArrowDownward" Color="Color.Error" />
-                            <span style="color: #2e7d32;">Debit</span>
-                        </div>
-                    </MudSelectItem>
-                </MudSelect>
+            <!-- Type Selection -->
+            <MudSelect T="string" @bind-Value="newTransaction.Type" Label="Transaction Type" Required ErrorText="Type is required" Variant="Variant.Outlined" Margin="Margin.Dense" Style="background-color: #ffffff; color: #2e7d32; border-color: #c8e6c9;" LabelStyle="color: #2e7d32;">
+                <MudSelectItem Value="@("Credit")">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <MudIcon Icon="@Icons.Material.Filled.ArrowUpward" Color="Color.Success" />
+                        <span style="color: #2e7d32;">Credit</span>
+                    </div>
+                </MudSelectItem>
+                <MudSelectItem Value="@("Debit")">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <MudIcon Icon="@Icons.Material.Filled.ArrowDownward" Color="Color.Error" />
+                        <span style="color: #2e7d32;">Debit</span>
+                    </div>
+                </MudSelectItem>
+            </MudSelect>
 
-                <!-- Date Field -->
-                <MudDatePicker
-                    @bind-Value="newTransaction.Date"
-                    Label="Transaction Date"
-                    Variant="Variant.Outlined"
-                    Margin="Margin.Dense"
-                    Min="new DateTime(2023, 1, 1)"
-                    Max="@DateTime.Now"
-                    Required
-                    ErrorText="Please select a date."
-                    Style="background-color: #ffffff; color: #2e7d32; border-color: #c8e6c9;"
-                    LabelStyle="color: #2e7d32;"
-                />
-            </div>
-
-            <!-- Third Row: Tag and Custom Tag -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-                <!-- Tag Selection -->
-                <MudSelect T="string" Value="Tag" ValueChanged="@((string val) => TagState(val))" Label="Tags" Variant="Variant.Outlined" Margin="Margin.Dense" Style="background-color: #ffffff; color: #2e7d32; border-color: #c8e6c9;" LabelStyle="color: #2e7d32;">
-                    <MudSelectItem Value="@("Yearly")">Yearly</MudSelectItem>
-                    <MudSelectItem Value="@("Monthly")">Monthly</MudSelectItem>
-                    <MudSelectItem Value="@("Food")">Food</MudSelectItem>
-                    <MudSelectItem Value="@("Drinks")">Drinks</MudSelectItem>
-                    <MudSelectItem Value="@("Clothes")">Clothes</MudSelectItem>
-                    <MudSelectItem Value="@("Gadgets")">Gadgets</MudSelectItem>
-                    <MudSelectItem Value="@("Miscellaneous")">Miscellaneous</MudSelectItem>
-                    <MudSelectItem Value="@("Fuel")">Fuel</MudSelectItem>
-                    <MudSelectItem Value="@("Rent")">Rent</MudSelectItem>
-                    <MudSelectItem Value="@("EMI")">EMI</MudSelectItem>
-                    <MudSelectItem Value="@("Party")">Party</MudSelectItem>
-                </MudSelect>
-
-                <!-- Custom Tag Input -->
-                <div style="display: flex; gap: 16px; align-items: center;">
-                    <MudTextField @bind-Value="customTag" Label="Add Custom Tag" Variant="Variant.Outlined" Style="flex: 1;" />
-                    <MudButton Variant="Variant.Outlined" Color="Color.Success" OnClick="AddCustomTag" Style="background-color: #e8f5e9; color: #2e7d32; border-color: #c8e6c9;">
-                        Add
-                    </MudButton>
-                </div>
-            </div>
-
-            <!-- Fourth Row: Notes Field -->
+            <!-- Notes Field -->
             <MudTextField @bind-Value="newTransaction.Remarks" Label="Notes (Optional)" Variant="Variant.Outlined" Lines="3" Margin="Margin.Dense" MaxLength="500" Style="background-color: #ffffff; color: #2e7d32; border-color: #c8e6c9;" LabelStyle="color: #2e7d32;" InputStyle="color: #2e7d32;" />
+
+            <!-- Date Field -->
+            <MudDatePicker
+                @bind-Value="newTransaction.Date"
+                Label="Transaction Date"
+                Variant="Variant.Outlined"
+                Margin="Margin.Dense"
+                Min="new DateTime(2023, 1, 1)"
+                Max="@DateTime.Now"
+                Required
+                ErrorText="Please select a date."
+                Style="background-color: #ffffff; color: #2e7d32; border-color: #c8e6c9;"
+                LabelStyle="color: #2e7d32;"
+            />
         </MudForm>
 
         <!-- Selected Tags Display -->
@@ -93,25 +61,46 @@
         </div>
         }
 
-        <!-- Error Message -->
-        @if (!string.IsNullOrEmpty(errorMessage))
-        {
-        <MudAlert Severity="Severity.Error" Variant="Variant.Filled" Class="mt-3">
-            @errorMessage
-        </MudAlert>
-        }
+        <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 24px;">
+            <!-- Tag Selection -->
+            <MudSelect T="string" Value="Tag" ValueChanged="@((string val) => TagState(val))" Label="Tags" Variant="Variant.Outlined" Margin="Margin.Dense" Style="background-color: #ffffff; color: #2e7d32; border-color: #c8e6c9;" LabelStyle="color: #2e7d32;">
+                <MudSelectItem Value="@("Yearly")">Yearly</MudSelectItem>
+                <MudSelectItem Value="@("Monthly")">Monthly</MudSelectItem>
+                <MudSelectItem Value="@("Food")">Food</MudSelectItem>
+                <MudSelectItem Value="@("Drinks")">Drinks</MudSelectItem>
+                <MudSelectItem Value="@("Clothes")">Clothes</MudSelectItem>
+                <MudSelectItem Value="@("Gadgets")">Gadgets</MudSelectItem>
+                <MudSelectItem Value="@("Miscellaneous")">Miscellaneous</MudSelectItem>
+                <MudSelectItem Value="@("Fuel")">Fuel</MudSelectItem>
+                <MudSelectItem Value="@("Rent")">Rent</MudSelectItem>
+                <MudSelectItem Value="@("EMI")">EMI</MudSelectItem>
+                <MudSelectItem Value="@("Party")">Party</MudSelectItem>
+            </MudSelect>
 
-        <!-- Add Transaction Button -->
-        <div style="display: flex; justify-content: flex-end; margin-top: 24px;">
-            <MudButton Variant="Variant.Filled" Color="Color.Success" StartIcon="@Icons.Material.Filled.Check" Size="Size.Small" Style="background-color: #2e7d32; color: #ffffff;" OnClick="AddNewTransaction">Add Transaction</MudButton>
+            <!-- Custom Tag Input -->
+            <div style="display: flex; gap: 16px; align-items: center;">
+                <MudTextField @bind-Value="customTag" Label="Add Custom Tag" Variant="Variant.Outlined" Style="flex: 1;" />
+                <MudButton Variant="Variant.Outlined" Color="Color.Success" OnClick="AddCustomTag" Style="background-color: #e8f5e9; color: #2e7d32; border-color: #c8e6c9;">
+                    Add
+                </MudButton>
+            </div>
+
+            <!-- Error Message -->
+            @if (!string.IsNullOrEmpty(errorMessage))
+            {
+            <MudAlert Severity="Severity.Error" Variant="Variant.Filled" Class="mt-3">
+                @errorMessage
+            </MudAlert>
+            }
+
+            <!-- Add Transaction Button -->
+            <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+                <MudButton Variant="Variant.Filled" Color="Color.Success" StartIcon="@Icons.Material.Filled.Check" Size="Size.Small" Style="background-color: #2e7d32; color: #ffffff;" OnClick="AddNewTransaction">Add Transaction</MudButton>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- Transaction List Heading -->
-<h3 style="text-align: center; color: black; font-size: 2rem; font-weight: 600; margin-top: 30px; text-transform: uppercase; letter-spacing: 1px;">Transaction List</h3>
-
-<!-- Transaction Table -->
 <div style="display: flex; justify-content: center; margin-top: 20px;">
     <MudTable Items="Transactions" Hover="true" Class="mt-4" Style="border-collapse: separate; border-spacing: 0; width: 100%;">
         <HeaderContent>
@@ -142,138 +131,138 @@
 </div>
 
 @code {
-    private MudForm form;
-    private List<Transaction> Transactions = new List<Transaction>();
-    private Transaction newTransaction;
-    private string Tag;
-    private string customTag;
-    private Guid clientId;
-    private string errorMessage;
-    private bool isEditing = false;
-    private string currencySymbol = "$"; // Default to USD
+private MudForm form;
+private List<Transaction> Transactions = new List<Transaction>();
+private Transaction newTransaction;
+private string Tag;
+private string customTag;
+private Guid clientId;
+private string errorMessage;
+private bool isEditing = false;
+private string currencySymbol = "$"; // Default to USD
 
-    protected override async Task OnInitializedAsync()
-    {
-        var clientIdString = await JS.InvokeAsync<string>("localStorage.getItem", "ClientID");
-        if (Guid.TryParse(clientIdString, out var parsedClientId))
-        {
-            clientId = parsedClientId;
-            newTransaction = new Transaction("", 0.0m, "", new List<string>(), DateTime.Now, "", clientId); // Initialize with a default date
-            await LoadTransactions();
-        }
-        else
-        {
-            Console.WriteLine("Invalid ClientID in local storage.");
-        }
+protected override async Task OnInitializedAsync()
+{
+var clientIdString = await JS.InvokeAsync<string>("localStorage.getItem", "ClientID");
+if (Guid.TryParse(clientIdString, out var parsedClientId))
+{
+clientId = parsedClientId;
+newTransaction = new Transaction("", 0.0m, "", new List<string>(), DateTime.Now, "", clientId); // Initialize with a default date
+await LoadTransactions();
+}
+else
+{
+Console.WriteLine("Invalid ClientID in local storage.");
+}
 
-        // Retrieve currency from local storage
-        currencySymbol = await JS.InvokeAsync<string>("localStorage.getItem", "userCurrency") ?? "$"; // Default to USD
-    }
+// Retrieve currency from local storage
+currencySymbol = await JS.InvokeAsync<string>("localStorage.getItem", "userCurrency") ?? "$"; // Default to USD
+}
 
-    private void TagState(string value)
-    {
-        if (!string.IsNullOrEmpty(value))
-        {
-            newTransaction.Tags.Add(value);
-            StateHasChanged();
-        }
-    }
+private void TagState(string value)
+{
+if (!string.IsNullOrEmpty(value))
+{
+newTransaction.Tags.Add(value);
+StateHasChanged();
+}
+}
 
-    private void AddCustomTag()
-    {
-        if (!string.IsNullOrEmpty(customTag))
-        {
-            newTransaction.Tags.Add(customTag);
-            customTag = string.Empty;
-            StateHasChanged();
-        }
-    }
+private void AddCustomTag()
+{
+if (!string.IsNullOrEmpty(customTag))
+{
+newTransaction.Tags.Add(customTag);
+customTag = string.Empty;
+StateHasChanged();
+}
+}
 
-    private async Task LoadTransactions()
-    {
-        if (clientId != Guid.Empty)
-        {
-            var trans = await TransactionService.GetTransactionDetail(clientId);
-            Transactions = trans.OrderByDescending(t => t.Date).ToList();
-        }
-    }
+private async Task LoadTransactions()
+{
+if (clientId != Guid.Empty)
+{
+var trans = await TransactionService.GetTransactionDetail(clientId);
+Transactions = trans.OrderByDescending(t => t.Date).ToList();
+}
+}
 
-    private async Task AddNewTransaction()
-    {
-        if (form.IsValid)
-        {
-            try
-            {
-                if (newTransaction.Type == "Debit")
-                {
-                    decimal availableBalance = await TransactionService.GetAvailableBalance(clientId);
-                    if (availableBalance < newTransaction.Budget)
-                    {
-                        errorMessage = $"Insufficient balance. Available balance: {FormatCurrency(availableBalance)}";
-                        return;
-                    }
-                }
+private async Task AddNewTransaction()
+{
+if (form.IsValid)
+{
+try
+{
+if (newTransaction.Type == "Debit")
+{
+decimal availableBalance = await TransactionService.GetAvailableBalance(clientId);
+if (availableBalance < newTransaction.Budget)
+{
+errorMessage = $"Insufficient balance. Available balance: {FormatCurrency(availableBalance)}";
+return;
+}
+}
 
-                if (!newTransaction.Date.HasValue)
-                {
-                    newTransaction.Date = DateTime.Now;
-                }
+if (!newTransaction.Date.HasValue)
+{
+newTransaction.Date = DateTime.Now;
+}
 
-                if (isEditing)
-                {
-                    await TransactionService.UpdateTransactionData(newTransaction, clientId);
-                    isEditing = false;
-                }
-                else
-                {
-                    await TransactionService.AddTransactionData(newTransaction, clientId);
-                }
+if (isEditing)
+{
+await TransactionService.UpdateTransactionData(newTransaction, clientId);
+isEditing = false;
+}
+else
+{
+await TransactionService.AddTransactionData(newTransaction, clientId);
+}
 
-                await LoadTransactions();
-                newTransaction = new Transaction("", 0.0m, "", new List<string>(), DateTime.Now, "", clientId); // Reset with a default date
-                errorMessage = string.Empty;
-            }
-            catch (Exception ex)
-            {
-                errorMessage = $"Error: {ex.Message}";
-            }
-        }
-    }
+await LoadTransactions();
+newTransaction = new Transaction("", 0.0m, "", new List<string>(), DateTime.Now, "", clientId); // Reset with a default date
+errorMessage = string.Empty;
+}
+catch (Exception ex)
+{
+errorMessage = $"Error: {ex.Message}";
+}
+}
+}
 
-    private void EditTransaction(Transaction transaction)
-    {
-        newTransaction = new Transaction
-        {
-            Description = transaction.Description,
-            Budget = transaction.Budget,
-            Type = transaction.Type,
-            Remarks = transaction.Remarks,
-            Date = transaction.Date,
-            Tags = transaction.Tags,
-            ClientID = transaction.ClientID
-        };
-        isEditing = true;
-    }
+private void EditTransaction(Transaction transaction)
+{
+newTransaction = new Transaction
+{
+Description = transaction.Description,
+Budget = transaction.Budget,
+Type = transaction.Type,
+Remarks = transaction.Remarks,
+Date = transaction.Date,
+Tags = transaction.Tags,
+ClientID = transaction.ClientID
+};
+isEditing = true;
+}
 
-    private async Task DeleteTransaction(Transaction transaction)
-    {
-        try
-        {
-            await TransactionService.DeleteTransactionData(transaction.Description, transaction.Date, clientId);
-            await LoadTransactions();
-        }
-        catch (Exception ex)
-        {
-            errorMessage = $"Error: {ex.Message}";
-        }
-    }
+private async Task DeleteTransaction(Transaction transaction)
+{
+try
+{
+await TransactionService.DeleteTransactionData(transaction.Description, transaction.Date, clientId);
+await LoadTransactions();
+}
+catch (Exception ex)
+{
+errorMessage = $"Error: {ex.Message}";
+}
+}
 
-    private string FormatCurrency(decimal amount)
-    {
-        return currencySymbol switch
-        {
-            "NPR" => $"Rs {amount:N2}",
-            _ => $"${amount:N2}" // Default to USD
-        };
-    }
+private string FormatCurrency(decimal amount)
+{
+return currencySymbol switch
+{
+"NPR" => $"Rs {amount:N2}",
+_ => $"${amount:N2}" // Default to USD
+};
+}
 }
